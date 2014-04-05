@@ -22,6 +22,7 @@ footer{
     bottom:9px;
     width:100%;
     .footer{
+        display:block;
         background-color:#5ec2a2;
         color:#ffffff;
         font-size:20px;
@@ -31,8 +32,9 @@ footer{
         text-align:center;
         margin:0 auto;
         border:1px solid #00bf8a;
-        -webkit-border-radius:18px 18px;
-        border-radius:18px 18px;
+        -webkit-border-radius:25px 25px;
+        border-radius:25px 25px;
+        -webkit-tap-highlight-color:rgba(255,255,255,0);
     }
 }
 
