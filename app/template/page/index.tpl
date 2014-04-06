@@ -25,13 +25,8 @@
         </footer>
         <div class="footer-wrapper"><a href="weixin://contacts/profile/gh_a470a6714523" class="footer">关注并成为会员</a></div>
 
-        <!-- build:js /static/scripts/zepto.js -->
-        <script src="../../bower_components/zepto/zepto.js"></script>
-        <!-- endbuild -->
 
+        <script data-main="/static/scripts/index" src="/static/scripts/require.js"></script>
 
-        <!-- build:js({app,.tmp}) /static/scripts/index.js -->
-        <script src="static/scripts/index.js"></script>
-        <!-- endbuild -->
 </body>
 </html>

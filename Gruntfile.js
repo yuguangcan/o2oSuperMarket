@@ -211,6 +211,23 @@ module.exports = function (grunt) {
             }
         },
 
+        //requirejs support
+        requirejs: {
+            dist: {
+                options: {
+                    optimize: 'uglify',
+                    preserveLicenseComments: false,
+                    generateSourceMaps: false,
+                    removeCombined: true,
+                    useStrict: true,
+                    baseUrl: '<%= config.app %>/static/scripts',
+                    mainConfigFile: '<%= config.app %>/require-config.js',
+                    dir: '<%= config.dist %>/static/scripts',
+                    keepBuildDir: true
+                }
+            }
+        },
+
         // Reads HTML for usemin blocks to enable smart builds that automatically
         // concat, minify and revision files. Creates configurations in memory so
         // additional tasks can operate on them
@@ -273,6 +290,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
+
 
         // By default, your `index.html`'s <!-- Usemin block --> will take care of
         // minification. These next options are pre-configured if you do not wish
@@ -387,6 +405,7 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'cssmin',
+        'requirejs:dist',
         'uglify',
         'copy:dist',
         'rev',
