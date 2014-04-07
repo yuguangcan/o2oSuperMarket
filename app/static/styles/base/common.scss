@@ -4,5 +4,13 @@
 @import '../widget/footer.scss';
 
 body{
-	background:#111111;
+	background:#f8f6f1;
+}
+
+.clearfix:after{
+    content:'';
+    clear:both;
+    overflow:hidden;
+    height:0; 
+    display:block; 
 }

@@ -13,7 +13,58 @@
 {%/block%}
 
 {%block name="content"%}
-<img src="/static/images/index_bg.jpg"></img>
+	<ul class="product-list">
+		<li class="clearfix">
+			<img class="img" src="/static/images/goods.jpg"></img>
+			<div class="info">
+				<div class="name">农夫山泉天然矿泉水6瓶装</div>
+				<div class="price">￥6.2</div>
+			</div>
+		</li>
+		<li class="clearfix">
+			<img class="img" src="/static/images/goods.jpg"></img>
+			<div class="info">
+				<div class="name">农夫山泉天然矿泉水6瓶装</div>
+				<div class="price">￥6.2</div>
+			</div>
+		</li>
+		<li class="clearfix">
+			<img class="img" src="/static/images/goods.jpg"></img>
+			<div class="info">
+				<div class="name">农夫山泉天然矿泉水6瓶装</div>
+				<div class="price">￥6.2</div>
+			</div>
+		</li>
+		<li class="clearfix">
+			<img class="img" src="/static/images/goods.jpg"></img>
+			<div class="info">
+				<div class="name">农夫山泉天然矿泉水6瓶装</div>
+				<div class="price">￥6.2</div>
+			</div>
+		</li>
+		<li class="clearfix">
+			<img class="img" src="/static/images/goods.jpg"></img>
+			<div class="info">
+				<div class="name">农夫山泉天然矿泉水6瓶装</div>
+				<div class="price">￥6.2</div>
+			</div>
+		</li>
+		<li class="clearfix">
+			<img class="img" src="/static/images/goods.jpg"></img>
+			<div class="info">
+				<div class="name">农夫山泉天然矿泉水6瓶装</div>
+				<div class="price">￥6.2</div>
+			</div>
+		</li>
+		<li class="clearfix">
+			<img class="img" src="/static/images/goods.jpg"></img>
+			<div class="info">
+				<div class="name">农夫山泉天然矿泉水6瓶装</div>
+				<div class="price">￥6.2</div>
+			</div>
+		</li>
+
+	</ul>
 {%/block%}
 
 {%block name="js"%}
