@@ -29,7 +29,14 @@ requirejs.config({
             ]
         },
         {
-            name: 'index',
+            name: 'page/index',
+            exclude: [
+                'requirelib',
+                'zepto'
+            ]
+        },
+        {
+            name: 'page/plist',
             exclude: [
                 'requirelib',
                 'zepto'

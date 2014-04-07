@@ -9,12 +9,12 @@
         <meta name="apple-mobile-web-app-capable" content="no" />
         <title>o2o超市</title>
 
-        <!-- build:css(.tmp) /static/styles/base.css -->
-        <link rel="stylesheet" href="static/styles/reset.css">
+        <!-- build:css(.tmp) /static/styles/base/reset.css -->
+        <link rel="stylesheet" href="static/styles/base/reset.css">
         <!-- endbuild -->
 
-        <!-- build:css(.tmp) /static/styles/index.css -->
-        <link rel="stylesheet" href="static/styles/index.css">
+        <!-- build:css(.tmp) /static/styles/page/index.css -->
+        <link rel="stylesheet" href="static/styles/page/index.css">
         <!-- endbuild -->
     </head>
     <body>
@@ -26,7 +26,7 @@
         <div class="footer-wrapper"><a href="weixin://contacts/profile/gh_a470a6714523" class="footer">关注并成为会员</a></div>
 
 
-        <script data-main="/static/scripts/index" src="/static/scripts/require.js"></script>
+        <script data-main="/static/scripts/page/index" src="/static/scripts/require.js"></script>
 
 </body>
 </html>

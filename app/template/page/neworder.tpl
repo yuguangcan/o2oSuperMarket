@@ -9,17 +9,14 @@
         <meta name="apple-mobile-web-app-capable" content="no" />
         <title>订单确认</title>
 
-        <!-- build:css(.tmp) /static/styles/base.css -->
-        <link rel="stylesheet" href="static/styles/reset.css">
+        <!-- build:css(.tmp) /static/styles/base/reset.css -->
+        <link rel="stylesheet" href="static/styles/base/reset.css">
         <!-- endbuild -->
 
-        <!-- build:css(.tmp) /static/styles/order.css -->
-        <link rel="stylesheet" href="static/styles/order.css">
+        <!-- build:css(.tmp) /static/styles/page/order.css -->
+        <link rel="stylesheet" href="static/styles/page/order.css">
         <!-- endbuild -->
 
-        <!-- build:js({app,.tmp}) /static/scripts/base.js -->
-        <script src="static/scripts/context.js"></script>
-        <!-- endbuild -->
 
     </head>
     <body>
@@ -37,8 +34,8 @@
         <!-- endbuild -->
 
 
-        <!-- build:js({app,.tmp}) /static/scripts/order.js -->
-        <script src="static/scripts/order.js"></script>
+        <!-- build:js({app,.tmp}) /static/scripts/page/order.js -->
+        <script src="static/scripts/page/order.js"></script>
         <!-- endbuild -->
 </body>
 </html>
