@@ -1,32 +1,48 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-        <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
-        <meta content="telephone=no" name="format-detection"/>
-        <meta content="address=no" name="format-detection"/>
-        <meta name="apple-mobile-web-app-capable" content="no" />
-        <title>o2o超市</title>
+{%*首页*%}
 
-        <!-- build:css(.tmp) /static/styles/base/reset.css -->
-        <link rel="stylesheet" href="static/styles/base/reset.css">
-        <!-- endbuild -->
+{%extends file="layout/layout.tpl"%} 
 
-        <!-- build:css(.tmp) /static/styles/page/index.css -->
-        <link rel="stylesheet" href="static/styles/page/index.css">
-        <!-- endbuild -->
-    </head>
-    <body>
+{%block name="title"%}
+首页
+{%/block%}
 
-        <img src="/static/images/index_bg.jpg"></img>
+{%block name="css"%}
+<!-- build:css(.tmp) /static/styles/page/index.css -->
+<link rel="stylesheet" href="static/styles/page/index.css">
+<!-- endbuild -->
+{%/block%}
 
-        <footer>
-        </footer>
-        <div class="footer-wrapper"><a href="weixin://contacts/profile/gh_a470a6714523" class="footer">关注并成为会员</a></div>
+{%block name="content"%}
+    <div class="category">
+        <ul class="clearfix">
+            {%foreach $data as $item%}
+                <li>
+                {%$item.cname%}
+                </li>
+            {%/foreach%}
+        </ul>
+    </div>
+    <div id='category-slider' class='swipe'>
+        <div class="category-list swipe-wrap">
+            {%foreach $data as $itemarr%}
+                <ul>
+                    {%foreach $itemarr.child as $item%}
+                        <li>
+                            <a href="" class="clearfix">
+                                <img class="img" src=""></img>
+                                <div class="info">
+                                    <div class="name">{%$item.cname%}</div>
+                                    <div class="sub">方便面/八宝粥/方便米饭</div>
+                                </div>
+                            </a>
+                        </li>
+                    {%/foreach%}
+                </ul>
+            {%/foreach%}
+        </div>
+    </div>
+{%/block%}
 
-
-        <script data-main="/static/scripts/page/index" src="/static/scripts/require.js"></script>
-
-</body>
-</html>
+{%block name="js"%}
+<script data-main="/static/scripts/page/index" src="/static/scripts/require.js"></script>
+{%/block%}

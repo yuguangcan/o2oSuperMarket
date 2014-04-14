@@ -6,13 +6,17 @@ requirejs.config({
         
         // resources
         'requirelib': '../../bower_components/requirejs/require',
-        'zepto': '../../bower_components/zepto/zepto'
+        'zepto': '../../bower_components/zepto/zepto',
+        'swipe': '../../bower_components/swipe/swipe'
 
     },
 
     shim: {
         'zepto':{
             exports : '$'
+        },
+        'swipe':{
+            exports: 'Swipe'
         }
         
         

@@ -1,40 +1,76 @@
-body
-{
-    position:absolute;
-    width:100%;
-    height:100%;
-}
-img{
-    display:block;
-    width:100%;
-    height:100%;
-}
-footer{
-    position:fixed;
-    bottom:0;
-    height:65px;
-    background-color:#6ed9cf;
-    opacity:0.5;
-    width:100%;
-}
-.footer-wrapper{
-    position:fixed;
-    bottom:9px;
-    width:100%;
-    .footer{
-        display:block;
-        background-color:#5ec2a2;
-        color:#ffffff;
-        font-size:20px;
-        width:220px;
-        height:45px;
-        line-height:45px;
-        text-align:center;
-        margin:0 auto;
-        border:1px solid #00bf8a;
-        -webkit-border-radius:25px 25px;
-        border-radius:25px 25px;
-        -webkit-tap-highlight-color:rgba(255,255,255,0);
+.category{
+    padding-left:17px;
+    background: #6ecba0;
+    white-space:nowrap;
+    overflow-y:hidden;
+    overflow-x:scroll;
+    -webkit-overflow-scrolling : touch;
+    height: 40px;
+    line-height: 40px;
+    ul{
+        position: relative;
+    }
+    li{
+        display: inline;
+        height: 38px;
+        line-height: 38px;
+        color: #fff;
+        padding: 10px 7px;
+        margin-right: 5px;
+        border-bottom: 2px solid #6ecba0;
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+        &.cur{
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
     }
 }
+.category-list{
+    ul{
+        padding: 15px 15px;
+        li{
+            padding: 15px 15px;
+            border-bottom: 1px solid #e7ece0;
+            &:last-child{
+                border-bottom: none;
+            }
+            a{
+                display: block;
+            }
+            .img{
+                float: left;
+                width: 74px;
+                height: 74px;
+            }
+            .info{
+                margin-left: 90px;
+                width: 150px;
+                .name{
+                    color: #333;
+                    line-height: 22px;
+                    margin-bottom: 5px;
+                }
+                .sub{
+                    color: #666666;
+                }
+            }
 
+        }
+    }
+}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > ul {
+  float:left;
+  width:100%;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  position: relative;
+}
