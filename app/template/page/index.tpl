@@ -16,8 +16,9 @@
     <div class="category">
         <ul class="clearfix">
             {%foreach $data as $item%}
-                <li>
+                <li class="notapcolor">
                 {%$item.cname%}
+                <div></div>
                 </li>
             {%/foreach%}
         </ul>

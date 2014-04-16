@@ -32,6 +32,16 @@
 
         {%include file="widget/footer.tpl"%}
 
+        {%*购物车图标*%}
+        {%block name="cart"%}
+            <div id="cart" class="cart-wrapper">
+                <div class="cart"><i></i></div>
+                <div class="cart-num-wrapper">
+                    <div class="cart-num"></div>
+                </div>
+            </div>
+        {%/block%}
+
         {%block name="js"%}{%/block%}
 
     </body>

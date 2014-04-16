@@ -2,9 +2,10 @@
 
 @import '../widget/header.scss';
 @import '../widget/footer.scss';
+@import '../widget/cart.scss';
 
 body{
-	background:#f8f6f1;
+	background:#faf9f5;
 }
 
 .clearfix:after{
@@ -14,6 +15,6 @@ body{
     height:0; 
     display:block; 
 }
-a{
+a,input,textarea,.notapcolor{
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
 }

@@ -7,8 +7,8 @@ requirejs.config({
         // resources
         'requirelib': '../../bower_components/requirejs/require',
         'zepto': '../../bower_components/zepto/zepto',
-        'swipe': '../../bower_components/swipe/swipe'
-
+        'swipe': '../../bower_components/swipe/swipe',
+        'common': 'base/common'
     },
 
     shim: {
@@ -29,7 +29,8 @@ requirejs.config({
             create: true,
             include: [
                 'requirelib',
-                'zepto'
+                'zepto',
+                'common'
             ]
         },
         {

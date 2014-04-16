@@ -1,9 +1,11 @@
 define(['zepto'], function ($) {
+	var userIcon = $('#user'),
+		userMenu = $('#uermenu');
     return {
-    	do :function(){
-	    	$(function(){
-		    	console.log('header');
-		    })
-	    }
+    	init :function(){
+    		userIcon.click(function(){
+    			userMenu.toggleClass('show');
+    		});
+   	    }
 	};
 });

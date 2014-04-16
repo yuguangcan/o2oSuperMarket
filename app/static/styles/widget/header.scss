@@ -1,6 +1,6 @@
 .common-header{
 	position:relative;
-	background:#6ecba0;
+	background:#61cba0;
 	padding: 10px;
 	text-align:center;
 	.logo{
@@ -21,22 +21,72 @@
 		border-radius:8px 8px;
 		background:#fff;
 		color:#333;
+		.search-icon{
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			background: url('/static/images/search.png');
+			-webkit-background-size:12px 12px;
+			background-size: 12px 12px;
+		}
 		input{
-			padding: 3px 3px;
-			width:190px;
+			padding: 0 5px;
+			width: 160px;
+			height: 26px;
+			line-height: 26px;
+			font-size: 16px;
 		}
 		input::-webkit-input-placeholder{
 			color:#b3b3b3;
 			text-align: center;
+			font-size: 16px;
 		}
 	}
 	.usericon{
 		position:absolute;
 		top:14px;
-		right:15px;
+		right:20px;
 		width: 19px;
 		height: 22px;
 		background:url(/static/images/ucenter_icon.png);
 		background-size: 100% 100%;
+	}
+	.user-menu{
+		position: absolute;
+		z-index: 100;
+		-webkit-border-radius:5px;
+		border-radius: 5px;
+		width: 157px;
+		top: 35px;
+		right: -10px;
+		background: rgba(51,51,51,.9);
+		-webkit-transition:-webkit-transform 0.2s ease-in;
+		-webkit-transform-origin:90% 0;
+		-webkit-transform:scale(0);
+		&.show{
+			-webkit-transform:scale(1);
+		}
+		.arrow{
+			position: absolute;
+			top: -9px;
+			right: 11px;
+			border-bottom: 9px solid rgba(51,51,51,.9);
+			border-left: 9px solid transparent;
+			border-right: 9px solid transparent;
+		}
+		ul{
+			padding: 0 12px;
+			li{
+				border-bottom: 1px solid #595855;
+				padding: 10px 0;
+				text-align: left;
+				a{
+					color: #fff;
+				}
+				&:last-child{
+					border-bottom:none;
+				}
+			}
+		}
 	}
 }
