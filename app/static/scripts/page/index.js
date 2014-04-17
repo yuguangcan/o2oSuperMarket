@@ -1,4 +1,4 @@
-require(['zepto','base/common','swipe'], function( $ ,common,Swipe ) {
+require(['zepto','common','swipe'], function( $ ,common,Swipe ) {
 	$(function(){
 
 		function Nav(option){

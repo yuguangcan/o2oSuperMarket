@@ -1,4 +1,4 @@
-require(['zepto','base/common'], function( $ ,common ) {
+require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 
 	$(function(){
 		$('#nav-category').click(function(){
@@ -17,7 +17,11 @@ require(['zepto','base/common'], function( $ ,common ) {
 			navSubCategoryList.filter('.cur').removeClass('cur');
 			navSubCategoryList.eq(index).addClass('cur');
 		});
+
+		$('.product-list').on('click','.add-cart',function(e){
+			cart.add($(this).data('pid'),1);
+		});
 	});
-	
+
 });
 

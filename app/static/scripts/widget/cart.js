@@ -4,7 +4,7 @@ define(['zepto'], function ($) {
 		cartDom = $('#cart');
 
 	function save(){
-		localStorage.setItem(cartKey,JSON.stringfy(cartObj));
+		localStorage.setItem(cartKey,JSON.stringify(cartObj));
 	}
 	function renderCartHtml(){
 		var pidCount = 0;
@@ -33,11 +33,12 @@ define(['zepto'], function ($) {
 		init : function(){
 			if(checkCart()){
 				renderCartHtml();
+				
 			}
 			
 		},
 		add : function(pid ,count){
-			if(checkCart()){
+			if(checkCart() && pid){
 				if(cartObj[pid]){
 					cartObj[pid] = cartObj[pid] + count;
 				}else{
@@ -48,7 +49,7 @@ define(['zepto'], function ($) {
 			}
 		},
 		remove : function(pid){
-			if(checkCart()){
+			if(checkCart() && pid){
 				if(cartObj[pid]){
 					delete cartObj[pid];
 				}

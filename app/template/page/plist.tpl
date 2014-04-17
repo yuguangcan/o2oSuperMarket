@@ -3,7 +3,7 @@
 {%extends file="layout/layout.tpl"%} 
 
 {%block name="title"%}
-首页
+商品列表
 {%/block%}
 
 {%block name="css"%}
@@ -60,7 +60,7 @@
 				<div class="name">农夫山泉天然矿泉水6瓶装</div>
 				<div class="price">￥6.2<span class="old-price">￥5.2</span></div>
 			</div>
-			<div class="add-cart">
+			<div class="add-cart" data-pid="1">
 				<i></i>
 			</div>
 			<div class="new-tag">
@@ -74,7 +74,7 @@
 				<div class="name">农夫山泉天然矿泉水6瓶装</div>
 				<div class="price">￥6.2<span class="old-price">￥5.2</span></div>
 			</div>
-			<div class="add-cart notapcolor">
+			<div class="add-cart notapcolor" data-pid="2">
 				<i></i>
 			</div>
 			<div class="new-tag">
@@ -88,7 +88,7 @@
 				<div class="name">农夫山泉天然矿泉水6瓶装</div>
 				<div class="price">￥6.2<span class="old-price">￥5.2</span></div>
 			</div>
-			<div class="add-cart notapcolor">
+			<div class="add-cart notapcolor" data-pid="3">
 				<i></i>
 			</div>
 			<div class="new-tag">
@@ -102,7 +102,7 @@
 				<div class="name">农夫山泉天然矿泉水6瓶装</div>
 				<div class="price">￥6.2<span class="old-price">￥5.2</span></div>
 			</div>
-			<div class="add-cart notapcolor">
+			<div class="add-cart notapcolor" data-pid="4">
 				<i></i>
 			</div>
 		</li>
