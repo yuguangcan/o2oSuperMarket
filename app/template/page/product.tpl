@@ -14,33 +14,70 @@
 
 {%block name="content"%}
     <div class="product"> 
-        <img src="/static/images/goods.jpg"></img>
-        <div class="name">椰树牌利乐包椰子汁245ml/包</div>
+        <img src="{%$product.pics.pic%}"></img>
+        <div class="name">{%$product.title%}</div>
         <div class="info clearfix">
-            <div class="price">
-                ￥6.2<span class="old-price">￥5.2</span>
+            <div class="price-label-big">
+                ￥{%$product.price%}
+                {%if $product.discount%}
+                <span class="old-price">￥{%$product.discount%}</span>
+                {%/if%}
             </div>
-            <div class="stock">库存：100</div>
+            <div class="stock">库存：{%$product.productNum%}</div>
         </div>
     </div>
     <div class="operation">
         <div class="type clearfix">
-            <span data-tid="1" class="notapcolor">￥10/5个装<i><b>&radic;</b></i></span>
-            <span data-tid="2" class="selected notapcolor">￥18/10个装<i><b>&radic;</b></i></span>
+            {%foreach $product.group as $item%}
+                {%if $item.desc%}
+                    {%if $product.pid == $item.pid%}
+                        <a href="/shop/product/detail/{%$item.pid%}.html" class="selected notapcolor">
+                    {%else%}
+                        <a href="/shop/product/detail/{%$item.pid%}.html" class="notapcolor">
+                    {%/if%}
+                    {%$item.desc%}<i><b></b></i></a>
+                {%/if%}
+            {%/foreach%}
         </div>
         <div class="add-minus">
             <span class="minus notapcolor">-</span>
-            <input type="text" value="1" id="product-count"></input>
+            <input type="number" value="1" min="1" max="{%$product.productNum%}" id="product-count"></input>
             <span class="add notapcolor">+</span>
         </div>
-        <div class="add-cart notapcolor" data-pid="5">
+        <div class="add-cart notapcolor" data-pid="{%$product.pid%}">
             <i></i>
             加入购物车
         </div>
     </div>
     <div class="product-description">
         <div class="title">商品详情</div>
-        <div class="content">好喝又实惠，大家快来买啊，哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈</div>
+        <div class="content">{%$product.content%}</div>
+    </div>
+
+    <div class="product-related">
+        <div class="title">猜你喜欢</div>
+        <ul class="related-list clearfix">
+            {%foreach $relate as $item%}
+            <li>
+                <img src="{%$item.pics.pic%}"></img>
+                <div class="name">{%$item.title%}</div>
+                <div class="price-label-small">
+                    {%if $item.discount%}
+                    ￥{%$item.discount%}
+                    <span class="old-price">￥{%$item.price%}</span>
+                    {%else%}
+                    ￥{%$item.price%}
+                    {%/if%}
+                </div>
+                <div class="info">
+                    <div class="add-cart-small" data-pid="{%$item.pid%}">
+                        <i></i>
+                    </div>
+                    <div class="sales-info">{%$item.sales%}人购买</div>
+                </div>
+            </li>
+            {%/foreach%}
+        </ul>
     </div>
 
 {%/block%}

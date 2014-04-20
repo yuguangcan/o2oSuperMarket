@@ -3,6 +3,12 @@
 @import '../widget/header.scss';
 @import '../widget/footer.scss';
 @import '../widget/cart.scss';
+@import '../widget/titlebar.scss';
+@import '../widget/usericon.scss';
+
+@import '../widget/add-cart.scss';
+@import '../widget/price-label.scss';
+
 
 body{
 	background:#faf9f5;
@@ -18,3 +24,8 @@ body{
 a,input,textarea,.notapcolor{
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
+
+.hide{
+	display: none;
+}
+

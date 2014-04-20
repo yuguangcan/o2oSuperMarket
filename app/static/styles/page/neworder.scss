@@ -1,0 +1,33 @@
+.section{
+	padding: 15px 10px;
+	border-bottom:1px solid #e7ece0;
+}
+
+.product-list{
+	li{
+		display: -webkit-box;
+		margin-bottom: 10px;
+		.img{
+			width: 40px;
+			height: 40px;
+		}
+		.info{
+			margin-left: 5px;
+
+		}
+	}
+}
+.totalprice{
+	text-align: right;
+}
+
+.submit{
+	height: 40px;
+	line-height: 40px;
+	margin: 15px 30px;
+	background: #61cba0;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+}

@@ -3,6 +3,10 @@ define(['zepto'], function ($) {
 		cartObj = JSON.parse(localStorage.getItem(cartKey)) || {},
 		cartDom = $('#cart');
 
+	cartDom.click(function(){
+		toCartPage();
+	});
+
 	function save(){
 		localStorage.setItem(cartKey,JSON.stringify(cartObj));
 	}
@@ -29,40 +33,49 @@ define(['zepto'], function ($) {
 		return (cartDom && cartDom.length > 0);
 	}
 
+	function toCartPage(){
+		var param = [];
+		for(var key in cartObj){
+			if(cartObj.hasOwnProperty(key)){
+				param.push(key + "=" + cartObj[key]);
+			}
+		}
+		window.location.href = "/shop/cart?"+param.join('&');
+	}
+
 	return {
 		init : function(){
-			if(checkCart()){
-				renderCartHtml();
-				
-			}
-			
+			checkCart() && renderCartHtml();			
 		},
 		add : function(pid ,count){
-			if(checkCart() && pid){
+			if(pid){
 				if(cartObj[pid]){
 					cartObj[pid] = cartObj[pid] + count;
 				}else{
 					cartObj[pid] = count;
 				}
 				save();
-				renderCartHtml();
+				checkCart() && renderCartHtml();
 			}
 		},
 		remove : function(pid){
-			if(checkCart() && pid){
+			if(pid){
 				if(cartObj[pid]){
 					delete cartObj[pid];
 				}
 				save();
-				renderCartHtml();
+				checkCart() && renderCartHtml();
 			}
 		},
 		clear: function(){
-			if(checkCart()){
-				cartObj = {};
-				save();
-				resetCartHtml();
-			}
+			
+			cartObj = {};
+			save();
+			checkCart() && renderCartHtml();
+			
+		},
+		toCartPage: function(){
+			return toCartPage();
 		}
 	};
 });

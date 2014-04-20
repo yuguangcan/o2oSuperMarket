@@ -115,38 +115,16 @@
 				line-height: 22px;
 				margin-bottom: 5px;
 			}
-			.price{
-				color: #61cba0;
-				font-weight: bold;
-				font-size: 24px;
-				.old-price{
-					margin-left: 5px;
-					font-size: 14px;
-					color: #999;
-					text-decoration: line-through;
-					font-weight: normal;
-				}
-			}
+            .sales{
+                margin-top: 5px;
+                font-size: 14px;
+                color: #666;
+            }
 		}
-		.add-cart{
+		.add-cart-big{
 			float: right;
-			width: 43px;
-			height: 43px;
-			-webkit-border-radis:43px;
-			border-radius: 43px;
-			background: #61cba0;
 			position: relative;
 			top: 23px;
-			i{
-				display: inline-block;
-				position: relative;
-				top: 12px;
-				left: 11px;
-				width: 21px;
-				height: 19px;
-				background: url(/static/images/add-cart.png);
-				background-size: 21px 19px;
-			}
 		}
 		.new-tag{
 			background: #aecc42;

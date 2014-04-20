@@ -25,12 +25,16 @@
 
     </head>
     <body>
-        {%include file="widget/header.tpl"%}
+        {%block name="header"%}
+            {%include file="widget/header.tpl"%}
+        {%/block%}
 
         {%block name="content"%}
         {%/block%}
 
-        {%include file="widget/footer.tpl"%}
+        {%block name="footer"%}
+            {%include file="widget/footer.tpl"%}
+        {%/block%}
 
         {%*购物车图标*%}
         {%block name="cart"%}

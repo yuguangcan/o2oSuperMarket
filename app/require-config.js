@@ -48,7 +48,32 @@ requirejs.config({
                 'zepto',
                 'common'
             ]
+        },
+        {
+            name: 'page/product',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
+        },
+        {
+            name: 'page/cart',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
+        },
+        {
+            name: 'page/neworder',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
         }
+
     ]
 
 });

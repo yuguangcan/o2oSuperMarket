@@ -1,0 +1,46 @@
+/*
+<div class="add-cart-big">
+	<i></i>
+</div>
+<div class="add-cart-small">
+	<i></i>
+</div>
+*/
+
+.add-cart-big{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	width: 43px;
+	height: 43px;
+	-webkit-border-radis:43px;
+	border-radius: 43px;
+	background: #61cba0;
+	i{
+		display: inline-block;
+		position: relative;
+		top: 12px;
+		left: 11px;
+		width: 21px;
+		height: 19px;
+		background: url(/static/images/add-cart.png);
+		background-size: 21px 19px;
+	}
+}
+
+.add-cart-small{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	width: 22px;
+	height: 22px;
+	-webkit-border-radis:22px;
+	border-radius: 22px;
+	background: #61cba0;
+	i{
+		display: inline-block;
+		position: relative;
+		top: 3px;
+		left: 4px;
+		width: 14px;
+		height: 12px;
+		background: url(/static/images/add-cart.png);
+		background-size: 14px 12px;
+	}
+}

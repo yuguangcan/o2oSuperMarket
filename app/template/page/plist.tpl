@@ -16,14 +16,14 @@
 
 	<div class="navbar">
         <ul class="nav-list">
-            <li id="nav-category" class="notapcolor">饮用水<span></span></li>
-            <li class="notapcolor">默认排序<span></span></li>
+            <li id="nav-category" class="notapcolor">{%$currentcategory.cname%}<span></span></li>
+            <li class="notapcolor">{%$currentsort.sname%}<span></span></li>
             <li class="notapcolor">只看自营<span></span></li>
         </ul>
         <div class="category-panel">
             <ul class="category-list">
-                {%foreach $data as $item%}
-                    {%if $item@index==0%}
+                {%foreach $category as $item%}
+                    {%if $item.cid == $currentcategory.pcid%}
                     <li class="notapcolor cur">
                     {%else%}
                     <li class="notapcolor">
@@ -34,15 +34,15 @@
                 {%/foreach%}
             </ul>
             <div class="sub-category-list">
-                {%foreach $data as $itemarr%}
-                    {%if $itemarr@index==0%}
+                {%foreach $category as $itemarr%}
+                    {%if $itemarr.cid == $currentcategory.pcid%}
                     <ul class="cur">
                     {%else%}
                     <ul>
                     {%/if%}
                         {%foreach $itemarr.child as $item%}
                             <li>
-                                <a href="" class="clearfix">
+                                <a href="/shop/product/plist/{%$item.cid%}.html?sort={%$currentsort.sid%}" class="clearfix">
                                     {%$item.cname%}
                                 </a>
                             </li>
@@ -54,61 +54,34 @@
     </div>
 
 	<ul class="product-list">
+		{%foreach $productlist as $item%}
 		<li class="clearfix">
-			<img class="img" src="/static/images/goods.jpg"></img>
-			<div class="info">
-				<div class="name">农夫山泉天然矿泉水6瓶装</div>
-				<div class="price">￥6.2<span class="old-price">￥5.2</span></div>
-			</div>
-			<div class="add-cart" data-pid="1">
+			<a href="/shop/product/detail/{%$item.pid%}.html">
+				<img class="img" src="{%$item.pics.pic%}"></img>
+				<div class="info">
+					<div class="name">{%$item.title%}</div>
+					<div class="price-label-big">
+						{%if $item.discount%}
+						￥{%$item.discount%}
+	                    <span class="old-price">￥{%$item.price%}</span>
+	                    {%else%}
+	                    ￥{%$item.price%}
+	                    {%/if%}
+					</div>
+					<div class="sales">最近30天卖出{%$item.sales%}件</div>
+				</div>
+			</a>
+			<div class="add-cart-big" data-pid="{%$item.pid%}">
 				<i></i>
 			</div>
+			{%if $item.isnew%}
 			<div class="new-tag">
 				<i></i>
 				<span>NEW</span>
 			</div>
+			{%/if%}
 		</li>
-		<li class="clearfix">
-			<img class="img" src="/static/images/goods.jpg"></img>
-			<div class="info">
-				<div class="name">农夫山泉天然矿泉水6瓶装</div>
-				<div class="price">￥6.2<span class="old-price">￥5.2</span></div>
-			</div>
-			<div class="add-cart notapcolor" data-pid="2">
-				<i></i>
-			</div>
-			<div class="new-tag">
-				<i></i>
-				<span>NEW</span>
-			</div>
-		</li>
-		<li class="clearfix">
-			<img class="img" src="/static/images/goods.jpg"></img>
-			<div class="info">
-				<div class="name">农夫山泉天然矿泉水6瓶装</div>
-				<div class="price">￥6.2<span class="old-price">￥5.2</span></div>
-			</div>
-			<div class="add-cart notapcolor" data-pid="3">
-				<i></i>
-			</div>
-			<div class="new-tag">
-				<i></i>
-				<span>NEW</span>
-			</div>
-		</li>
-		<li class="clearfix">
-			<img class="img" src="/static/images/goods.jpg"></img>
-			<div class="info">
-				<div class="name">农夫山泉天然矿泉水6瓶装</div>
-				<div class="price">￥6.2<span class="old-price">￥5.2</span></div>
-			</div>
-			<div class="add-cart notapcolor" data-pid="4">
-				<i></i>
-			</div>
-		</li>
-
-		
-
+		{%/foreach%}
 	</ul>
 {%/block%}
 

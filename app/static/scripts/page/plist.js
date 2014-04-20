@@ -18,7 +18,8 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 			navSubCategoryList.eq(index).addClass('cur');
 		});
 
-		$('.product-list').on('click','.add-cart',function(e){
+		$('.product-list').on('click','.add-cart-big',function(e){
+			e.stopPropagation();
 			cart.add($(this).data('pid'),1);
 		});
 	});

@@ -16,7 +16,7 @@
 
     <div class="category">
         <ul class="clearfix">
-            {%foreach $data as $item%}
+            {%foreach $category as $item%}
                 <li class="notapcolor">
                 {%$item.cname%}
                 <div></div>
@@ -26,12 +26,12 @@
     </div>
     <div id='category-slider' class='swipe'>
         <div class="category-list swipe-wrap">
-            {%foreach $data as $itemarr%}
+            {%foreach $category as $itemarr%}
                 <ul>
                     {%foreach $itemarr.child as $item%}
                         <li>
-                            <a href="" class="clearfix">
-                                <img class="img" src=""></img>
+                            <a href="/shop/product/plist/{%$item.cid%}.html" class="clearfix">
+                                <img class="img" src="{%$item.pic%}"></img>
                                 <div class="info">
                                     <div class="name">{%$item.cname%}</div>
                                     <div class="sub">方便面/八宝粥/方便米饭</div>

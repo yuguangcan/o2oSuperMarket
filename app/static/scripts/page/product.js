@@ -1,11 +1,6 @@
 require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 
 	$(function(){
-		var typeSelector = $('.operation .type span');
-		typeSelector.click(function(){
-			typeSelector.filter('.selected').removeClass('selected');
-			$(this).addClass('selected');		
-		});
 
 		var productCount = $('#product-count');
 		$('.operation .add-minus .add').click(function(){
