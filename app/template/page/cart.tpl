@@ -13,7 +13,8 @@
 {%/block%}
 
 {%block name="content"%}
-    
+
+    {%if $cart|count > 0%}
     <div class="content-wrapper">
         <div class="operation clearfix">
             <a class="btn" id="selectall"><span>全选</span></a>
@@ -58,7 +59,8 @@
             </button>
         </div>
     </div>
-
+    {%/if%}
+    
     {%if $cart|count > 0%}
     <div class="empty hide">
     {%else%}

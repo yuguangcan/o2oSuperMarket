@@ -20,7 +20,7 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 
 		$('.product-list').on('click','.add-cart-big',function(e){
 			e.stopPropagation();
-			cart.add($(this).data('pid'),1);
+			cart.add($(this).data('pid'),1,e.target);
 		});
 	});
 

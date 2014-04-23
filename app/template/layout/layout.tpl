@@ -40,12 +40,15 @@
         {%block name="cart"%}
             <div id="cart" class="cart-wrapper">
                 <div class="cart"><i></i></div>
-                <div class="cart-num-wrapper">
+                <div class="cart-num-wrapper cart-num-box">
                     <div class="cart-num"></div>
                 </div>
             </div>
+            <div class="float-cart-num-wrapper cart-num-box" animated="0">
+                <div class="cart-num">1</div>
+            </div>
         {%/block%}
-
+        
         {%block name="js"%}{%/block%}
 
     </body>

@@ -1,7 +1,8 @@
 define(['zepto'], function ($) {
 	var cartKey = 'cart',
 		cartObj = JSON.parse(localStorage.getItem(cartKey)) || {},
-		cartDom = $('#cart');
+		cartDom = $('#cart'),
+		floatCartNum = $('.float-cart-num-wrapper');
 
 	cartDom.click(function(){
 		toCartPage();
@@ -43,11 +44,30 @@ define(['zepto'], function ($) {
 		window.location.href = "/shop/cart?"+param.join('&');
 	}
 
+	function floaterNumAnimate(target,callback){
+		if(floatCartNum.attr('animated') == '1'){
+			floatCartNum.hide().css({top:0,left:0});
+		}
+		var targetOffset = $(target).offset(),
+			destOffset = cartDom.offset();
+		floatCartNum.attr('animated',1);
+		floatCartNum.css({top:targetOffset.top,left:targetOffset.left}).show().animate(
+			{
+				top : destOffset.top-5,
+				left : destOffset.left+destOffset.width+5-26
+			},500,'ease-out',function(){
+				floatCartNum.hide().css({top:0,left:0});
+				floatCartNum.attr('animated',0);
+				callback();
+			});
+		
+	}
+
 	return {
 		init : function(){
 			checkCart() && renderCartHtml();			
 		},
-		add : function(pid ,count){
+		add : function(pid ,count ,target){
 			if(pid){
 				if(cartObj[pid]){
 					cartObj[pid] = cartObj[pid] + count;
@@ -55,7 +75,9 @@ define(['zepto'], function ($) {
 					cartObj[pid] = count;
 				}
 				save();
-				checkCart() && renderCartHtml();
+				if(checkCart()){
+					!target ? renderCartHtml() : floaterNumAnimate(target,renderCartHtml);
+				}
 			}
 		},
 		remove : function(pid){
