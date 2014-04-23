@@ -421,13 +421,10 @@ dsy.add("0",["北京市","天津市","上海市","重庆市","河北省","山西
 			s = [provinceId,city,country];
 
 			for(i=0;i<s.length-1;i++){
-				var index = i;
-				function changeSelect(){
-					change(index+1);
-				}
-				document.getElementById(s[i]).onchange = function(){
-					changeSelect();
-				};
+				document.getElementById(s[i]).onchange = (function(index){
+					return function(){change(index+1);}
+				})(i);
+				
 		    }
 
 		    change(0);

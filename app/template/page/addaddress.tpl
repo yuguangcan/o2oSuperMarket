@@ -29,6 +29,7 @@
     		<input name="name" type="text"></input>
     	</div>
     	<div class="select">
+    		<label>地址：</label>
     		<select id="province"></select>
     		<select id="city"></select>
 			<select id="country"></select>
