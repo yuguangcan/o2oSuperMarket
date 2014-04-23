@@ -59,8 +59,10 @@
         <ul class="related-list clearfix">
             {%foreach $relate as $item%}
             <li>
-                <img src="{%$item.pics.pic%}"></img>
-                <div class="name">{%$item.title%}</div>
+                <a href="/shop/product/detail/{%$item.pid%}.html">
+                    <img src="{%$item.pics.pic%}"></img>
+                    <div class="name">{%$item.title%}</div>
+                </a>
                 <div class="price-label-small">
                     {%if $item.discount%}
                     ￥{%$item.discount%}
