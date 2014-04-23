@@ -17,7 +17,7 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="widget/titlebar.tpl title="确认下单"%}
+    {%include file="widget/titlebar.tpl" title="确认下单"%}
 
     <div class="address section">
         收货人：帅哥 18888888888<br/>北京市

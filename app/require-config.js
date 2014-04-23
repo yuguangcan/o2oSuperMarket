@@ -72,7 +72,24 @@ requirejs.config({
                 'zepto',
                 'common'
             ]
+        },
+        {
+            name: 'page/addaddress',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
+        },
+        {
+            name: 'page/addresslist',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
         }
+
 
     ]
 

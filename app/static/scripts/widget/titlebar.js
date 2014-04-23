@@ -1,8 +1,8 @@
-define(['zepto','widget/cart'], function ($ ,cart) {
+define(['zepto'], function ($) {
     return {
     	init :function(){
     		$('#navback').click(function(){
-    			cart.toCartPage();
+    			window.history.go(-1);
     		});
    	    }
 	};
