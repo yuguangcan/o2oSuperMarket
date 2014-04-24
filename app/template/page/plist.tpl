@@ -72,7 +72,7 @@
 				</div>
 			</a>
 			<div class="add-cart-big" data-pid="{%$item.pid%}">
-				<i></i>
+				<i class="icon-add-cart-big"></i>
 			</div>
 			{%if $item.isnew%}
 			<div class="new-tag">

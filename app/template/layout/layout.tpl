@@ -39,7 +39,7 @@
         {%*购物车图标*%}
         {%block name="cart"%}
             <div id="cart" class="cart-wrapper">
-                <div class="cart"><i></i></div>
+                <div class="cart"><i class="icon-cart"></i></div>
                 <div class="cart-num-wrapper cart-num-box">
                     <div class="cart-num"></div>
                 </div>

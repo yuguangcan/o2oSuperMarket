@@ -1,0 +1,20 @@
+@import '../sass/retina-sprite-mixin';
+
+$icon-retina: sprite-map("icons/*.png");
+
+.icon-user{
+ 	@include retina-sprite-background(user,$icon-retina);
+}
+.icon-search{
+	@include retina-sprite-background(search,$icon-retina);
+}
+.icon-cart{
+	@include retina-sprite-background(cart,$icon-retina);
+}
+.icon-add-cart-big{
+	@include retina-sprite-background(add-cart-big,$icon-retina);
+}
+.icon-add-cart-small{
+	@include retina-sprite-background(add-cart-small,$icon-retina);
+}
+

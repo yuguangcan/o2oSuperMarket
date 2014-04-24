@@ -45,7 +45,7 @@
             <span class="add notapcolor">+</span>
         </div>
         <div class="add-cart notapcolor" data-pid="{%$product.pid%}">
-            <i></i>
+            <i class="icon-add-cart-big"></i>
             加入购物车
         </div>
     </div>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="info">
                     <div class="add-cart-small" data-pid="{%$item.pid%}">
-                        <i></i>
+                        <i class="icon-add-cart-small"></i>
                     </div>
                     <div class="sales-info">{%$item.sales%}人购买</div>
                 </div>

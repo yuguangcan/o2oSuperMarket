@@ -4,7 +4,7 @@
 		掌心
 	</div>
 	<div class="search-box">
-		<span class="search-icon"></span>
+		<span class="icon-search"></span>
 		<input class="search-input" placeholder="搜索"></input>
 	</div>
 	{%include file="widget/usericon.tpl"%}

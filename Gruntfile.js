@@ -158,7 +158,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    generatedImagesDir: '<%= config.dist %>/static/images/generated'
+                    generatedImagesDir: '<%= config.app %>/static/images/generated'
                 }
             },
             server: {
@@ -400,9 +400,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        //'jshint',
         'useminPrepare',
         'concurrent:dist',
-        'autoprefixer',
         'concat',
         'cssmin',
         'requirejs:dist',

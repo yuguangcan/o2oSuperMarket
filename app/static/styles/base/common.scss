@@ -1,14 +1,14 @@
-@import 'reset.scss';
+@import 'reset';
 
-@import '../widget/header.scss';
-@import '../widget/footer.scss';
-@import '../widget/cart.scss';
-@import '../widget/titlebar.scss';
-@import '../widget/usericon.scss';
+@import '../widget/icon';
+@import '../widget/header';
+@import '../widget/footer';
+@import '../widget/cart';
+@import '../widget/titlebar';
+@import '../widget/usericon';
 
-@import '../widget/add-cart.scss';
-@import '../widget/price-label.scss';
-
+@import '../widget/add-cart';
+@import '../widget/price-label';
 
 body{
 	background:#faf9f5;

@@ -1,5 +1,5 @@
 {%*右上角用户图标*%}
-<div id="user" class="usericon notapcolor">
+<div id="user" class="icon-user notapcolor">
 	<div id="uermenu" class="user-menu">
 		<ul>
 			<li><a href="">chenchen</a></li>
