@@ -24,7 +24,7 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 				if(item.checked){
 					count++;
 					var parent = $(item).parent();
-					price = price + (parent.find('.current-price').html().substr(1) - 0) * parent.find('.count').val();
+					price = price + (parent.find('.current-price').html().substr(1) - 0) * parent.find('.product-count').val();
 				}
 			});
 			totalprice.html('￥'+price);
@@ -52,8 +52,12 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 					selectCount++;
 				}
 			});
-			if(selectCount == $('.select').length || selectCount == 0){
-				changeSelectAll();
+			if(selectCount == $('.select').length){
+				$('#selectall').find('span').html('全不选');
+				isSelectAll = true;
+			}else{
+				$('#selectall').find('span').html('全选');
+				isSelectAll = false;
 			}
 			calPriceAndCount();
 		});
@@ -74,17 +78,28 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 			
 		});
 
+		$('.product-count').on('change',function(){
+			if($(this).parents('li').find('.select').get(0).checked){
+				calPriceAndCount();
+			}
+		});
+
 		$('.submit').click(function(){
 			var cartObj = {};
 			$('.select').each(function(index,item){
 				if(item.checked){
 					var parent = $(item).parent();
-					cartObj[parent.find('.select').val()] = parent.find('.count').val(); 
+					cartObj[parent.find('.select').val()] = parent.find('.product-count').val(); 
 				}
 			});
 
 			$.post('/shop/cartcommit',cartObj,function(response){
-				
+				var data = JSON.parse(response);
+				if(data && data.errno == 0){
+					window.location.href="/shop/order/neworder?id="+data.data.toid;
+				}else if(data.errno != 0){
+					alert();
+				}
 			});
 		})
 	});

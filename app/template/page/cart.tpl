@@ -41,7 +41,7 @@
                             {%else%}
                                 <span class="current-price">￥{%$item.price%}</span>
                             {%/if%}
-                            &nbsp;&nbsp;x&nbsp;&nbsp;<input type="number" value="{%$item.cartNum%}" min="1" max="{%$item.productNum%}" class="count"></input>
+                            &nbsp;&nbsp;x&nbsp;&nbsp;<input type="number" value="{%$item.cartNum%}" min="1" max="{%$item.productNum%}" class="product-count"></input>
                         </div>
                     </div>
                 </div>

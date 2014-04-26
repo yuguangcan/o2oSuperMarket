@@ -2,7 +2,10 @@
 	padding: 15px 10px;
 	border-bottom:1px solid #e7ece0;
 }
-
+.address{
+	display: block;
+	color: #333;
+}
 .product-list{
 	li{
 		display: -webkit-box;
@@ -17,8 +20,14 @@
 		}
 	}
 }
+.pay{
+	input{
+		-webkit-appearance:radio;
+	}
+}
 .totalprice{
 	text-align: right;
+	margin:10px 10px;
 }
 
 .submit{

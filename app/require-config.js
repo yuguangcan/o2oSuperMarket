@@ -74,7 +74,7 @@ requirejs.config({
             ]
         },
         {
-            name: 'page/addaddress',
+            name: 'page/address',
             exclude: [
                 'requirelib',
                 'zepto',

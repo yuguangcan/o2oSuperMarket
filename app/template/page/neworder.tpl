@@ -19,20 +19,25 @@
 {%block name="content"%}
     {%include file="widget/titlebar.tpl" title="确认下单"%}
 
-    <div class="address section">
-        收货人：帅哥 18888888888<br/>北京市
-    </div>
+    <a href="/shop/addresslist" class="address section">
+        {%foreach $address as $item%}
+            {%if $item.prio == "1"%}
+            收货人：{%$item.receiver%}&nbsp;&nbsp;{%$item.phone%} <br/>
+            {%$item.province%}{%$item.city%}{%$item.district%}{%$item.community%}{%$item.unit%}{%$item.doorNo%}
+            {%/if%}
+        {%/foreach%}
+    </a>
 
     <ul class="product-list section">
-        {%foreach $cart as $item%}
+        {%foreach $product.list as $item%}
         <li>
             <img src="{%$item.pics.pic%}" class="img"></img>
             <div class="info">
                 <p class="name">{%$item.title%}</p>
-                <p class="desc">{%$item.desc%}</p>
+                <p class="desc">{%$item.groupName%}</p>
                 <p class="price">单价：￥{%$item.price%}</p>
-                <p class="count">数量：{%$item.count%}</p>
-                <p class="total">总价：￥{%$item.totalprice%}</p>
+                <p class="count">数量：{%$item.cartNum%}</p>
+                <p class="total">总价：￥{%$item.price * $item.cartNum%}</p>
             </div>
         </li>
         {%/foreach%}
@@ -41,11 +46,12 @@
     <div class="pay section">
         <input type="radio" name="pay" value="1" checked="checked"></input>
         <label>货到付款</label>
+        <br/>
         <input type="radio" name="pay" value="1" checked="checked"></input>
         <label>微信支付</label>
     </div>
 
-    <div class="totalprice">实付款：￥{%$totalprice%}</div>
+    <div class="totalprice">实付款：￥{%$product.total%}</div>
 
     <div class="submit">
         提交订单

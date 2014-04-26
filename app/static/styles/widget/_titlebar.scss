@@ -1,23 +1,17 @@
 .common-titlebar{
-	text-align: center;
 	height: 44px;
-	font-size: 18px;
-	font-weight: 700;
-	color: #fff;
 	background: #61cba0;
-	line-height: 44px;
 	position: relative;
-	.navback{
-		font-size: 14px;
-		height: 30px;
-		line-height: 30px;
-		top: 7px;
-		left: 15px;
-		position: absolute;
-		color: #4e4e4e;
-		background-color: #faf9f5;
-		border: 1px #bfbfbf solid;
-		border-radius: 3px;
+	.title{
 		text-align: center;
+		font-size: 18px;
+		font-weight: 700;
+		color: #fff;
+		line-height: 44px;
+	}
+	.icon-arrow-left{
+		position: absolute;
+		left:20px;
+		top: 12px;
 	}
 }

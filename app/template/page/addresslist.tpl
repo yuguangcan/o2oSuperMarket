@@ -19,20 +19,21 @@
 {%block name="content"%}
     {%include file="widget/titlebar.tpl" title="选择地址"%}
     <ul class="address-list">
-        <li>
-            <input type="radio" name="default-address" checked="checked" id="address-1"></input>
-            <label for="address-1">
-                陈陈 123456789<br>北京市朝阳区三里屯soho
-            </label>
-        </li>
-        <li>
-            <input type="radio" name="default-address" id="address-2"></input>
-            <label for="address-2">
-                陈陈 123456789<br>北京市朝阳区三里屯soho2
-            </label>
-        </li>
+        {%foreach $address as $item%}
+            <li>
+                <a href="/shop/address?addressid={%$item.addressid%}">
+                    <div class="address-info">
+                        {%$item.receiver%}&nbsp;&nbsp;{%$item.phone%}<br>
+                        {%$item.province%}{%$item.city%}{%$item.district%}{%$item.community%}{%$item.unit%}{%$item.detail%}
+                    </div>
+                    {%if $item.prio == "1"%}
+                        <span class="prio"></span>
+                    {%/if%}
+                </a>
+            </li>
+        {%/foreach%}
     </ul>
-    <a class="add-address" href="">
+    <a class="add-address" href="/shop/address?edit=0">
         新增收货地址
     </a>
 {%/block%}
