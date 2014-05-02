@@ -15,11 +15,16 @@
 {%block name="content"%}
     {%include file="widget/ucenternav.tpl" defaultindex=2%}
 
-    {%foreach $oderlist as $item%}
+    {%foreach $list as $item%}
         {%include file="widget/orderitem.tpl" item=$item%}
-    {%/if%}
+    {%/foreach%}
     
 {%/block%}
+
+{%*购物车图标不需要*%}
+{%block name="cart"%}
+{%/block%}
+
 
 {%block name="js"%}
 <script data-main="/static/scripts/page/order-cancel" src="/static/scripts/require.js"></script>

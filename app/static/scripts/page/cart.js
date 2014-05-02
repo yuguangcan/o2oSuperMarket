@@ -92,7 +92,7 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 					cartObj[parent.find('.select').val()] = parent.find('.product-count').val(); 
 				}
 			});
-
+			
 			$.post('/shop/cartcommit',cartObj,function(response){
 				var data = JSON.parse(response);
 				if(data && data.errno == 0){

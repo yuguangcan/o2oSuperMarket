@@ -70,7 +70,7 @@ define(['zepto'], function ($) {
 		add : function(pid ,count ,target){
 			if(pid){
 				if(cartObj[pid]){
-					cartObj[pid] = cartObj[pid] + count;
+					cartObj[pid] = cartObj[pid] -0 + count;
 				}else{
 					cartObj[pid] = count;
 				}

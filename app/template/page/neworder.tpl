@@ -25,6 +25,10 @@
             收货人：{%$item.receiver%}&nbsp;&nbsp;{%$item.phone%} <br/>
             {%$item.province%}{%$item.city%}{%$item.district%}{%$item.community%}{%$item.unit%}{%$item.doorNo%}
             {%/if%}
+            <script>
+                F.context('aid','{%$item.addressid%}');
+            </script>
+
         {%/foreach%}
     </a>
 
@@ -41,10 +45,13 @@
             </div>
         </li>
         {%/foreach%}
+        <script>
+            F.context('product',{%json_encode($product.list)%});
+        </script>
     </ul>
 
     <div class="pay section">
-        <input type="radio" name="pay" value="1" checked="checked"></input>
+        <input type="radio" name="pay" value="0"></input>
         <label>货到付款</label>
         <br/>
         <input type="radio" name="pay" value="1" checked="checked"></input>

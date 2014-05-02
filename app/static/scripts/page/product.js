@@ -10,12 +10,12 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 			productCount.val(productCount.val()-1);
 		});
 
-		$('.operation').on('click','.add-cart',function(e){
-			cart.add($(this).data('pid'),productCount.val(),e.target);
+		$('.add-cart').on('click',function(e){
+			cart.add($(this).data('pid'),parseInt(productCount.val()),e.target);
 		});
 
 		$('.add-cart-small').on('click',function(e){
-			cart.add($(this).data('pid'),productCount.val(),e.target);
+			cart.add($(this).data('pid'),parseInt(productCount.val()),e.target);
 		});
 
 	});

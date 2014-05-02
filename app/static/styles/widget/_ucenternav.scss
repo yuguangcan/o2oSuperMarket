@@ -1,6 +1,6 @@
 .ucenter-nav{
 	display: -webkit-box;
-	margin: 15px 15px;
+	padding: 15px 15px;
 	background: #61cba0;
 	height: 28px;
 	line-height: 28px;
@@ -8,6 +8,8 @@
 		border: 1px solid #fff;
 		color: #fff;
 		-webkit-box-flex:1;
+		display: block;
+		text-align: center;
 		&.cur{
 			color: #61cba0;
 			background: #fff;
