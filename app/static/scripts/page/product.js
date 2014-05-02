@@ -11,8 +11,13 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 		});
 
 		$('.operation').on('click','.add-cart',function(e){
-			cart.add($(this).data('pid'),productCount.val());
+			cart.add($(this).data('pid'),productCount.val(),e.target);
 		});
+
+		$('.add-cart-small').on('click',function(e){
+			cart.add($(this).data('pid'),productCount.val(),e.target);
+		});
+
 	});
 
 });

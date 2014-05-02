@@ -12,7 +12,14 @@
 <!-- endbuild -->
 {%/block%}
 
+{%*通用顶部不需要*%}
+{%block name="header"%}
+{%/block%}
+
+
 {%block name="content"%}
+    {%include file="widget/titlebar.tpl" title="商品详情"%}
+
     <div class="product"> 
         <img src="{%$product.pics.pic%}"></img>
         <div class="name">{%$product.title%}</div>

@@ -177,6 +177,9 @@
 			color: #333;
 			margin:0 2px 5px;
 			overflow: hidden;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 		.info{
 			margin: 5px 2px 5px;

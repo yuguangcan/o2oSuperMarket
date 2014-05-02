@@ -19,21 +19,31 @@
 {%block name="content"%}
     {%include file="widget/titlebar.tpl" title="添加收货地址"%}
 
-    <form>
     	<div class="address-input">
     		<label>收货人</label>
-    		<input name="recerver" type="text" value="{%$receiver%}"></input>
+    		<input name="receiver" id="receiver" type="text" value="{%$address.receiver%}"></input>
     	</div>
     	<div class="address-input">
     		<label>手机号</label>
-    		<input name="phone" type="telephone" value="{%$phone%}"></input>
+    		<input name="phone" id="phone" type="telephone" value="{%$address.phone%}"></input>
     	</div>
     	<div class="address-input">
     		<label>城市</label>
             <div class="select-wrap">
         		<select id="city">
-                    {%if $city%}
-                        <option value="{%$city%}">{%$city%}</option>
+                    {%if $address.city%}
+                        {%foreach $city as $item%}
+                            {%if $address.city == $item.city%}
+                                <option value="{%$address.city%}" checked="checked">{%$address.city%}</option>
+                            {%else%}
+                                <option value="{%$item.city%}">{%$item.city%}</option>
+                            {%/if%}
+                        {%/foreach%}
+                    {%else%}
+                        <option value="-1">请选择</option>
+                        {%foreach $city as $item%}
+                            <option value="{%$item.city%}">{%$item.city%}</option>
+                        {%/foreach%}
                     {%/if%}
                 </select>
             </div>
@@ -42,8 +52,14 @@
             <label>区域</label>
             <div class="select-wrap">
                 <select id="district">
-                    {%if $city%}
-                        <option value="{%$district%}">{%$district%}</option>
+                    {%if $address.district%}
+                        {%foreach $district as $item%}
+                            {%if $address.district == $item.district%}
+                                <option value="{%$address.district%}" checked="checked">{%$address.district%}</option>
+                            {%else%}
+                                <option value="{%$item.district%}">{%$item.district%}</option>
+                            {%/if%}
+                        {%/foreach%}
                     {%/if%}
                 </select>
             </div>
@@ -52,8 +68,14 @@
             <label>小区</label>
             <div class="select-wrap">
                 <select id="community">
-                    {%if $community%}
-                        <option value="{%$community%}">{%$community%}</option>
+                    {%if $address.community%}
+                        {%foreach $community as $item%}
+                            {%if $address.community == $item.community%}
+                                <option value="{%$address.community%}" checked="checked">{%$address.community%}</option>
+                            {%else%}
+                                <option value="{%$item.community%}">{%$item.community%}</option>
+                            {%/if%}
+                        {%/foreach%}
                     {%/if%}
                 </select>
             </div>
@@ -62,32 +84,36 @@
             <label>幢/座/楼</label>
             <div class="select-wrap">
                 <select id="unit">
-                    {%if $unit%}
-                        <option value="{%$unit%}">{%$unit%}</option>
+                    {%if $address.unit%}
+                        {%foreach $unit as $item%}
+                            {%if $address.unit == $item.unit%}
+                                <option value="{%$address.unit%}" checked="checked">{%$address.unit%}</option>
+                            {%else%}
+                                <option value="{%$item.unit%}">{%$item.unit%}</option>
+                            {%/if%}
+                        {%/foreach%}
                     {%/if%}
                 </select>
             </div>
         </div>
     	<div class="address-detail">
     		<label>详细地址</label>
-    		<textarea name="name" value="{%$detail%}"></textarea>
+    		<textarea name="name" id="detail">{%$address.detail%}</textarea>
     	</div>
         <div class="address-set-default">
-            {%if $prio == '1'%}
+            {%if $address.prio == '1'%}
                 <input id="set-default" class="set-default" type="checkbox" checked="checked"></input>
             {%else%}
                 <input id="set-default" class="set-default" type="checkbox"></input>
             {%/if%}
                 <label for="set-default">设置为默认地址</label>
         </div>
-        <div class="submit-btn">
+        <div class="submit-btn" data-aid="{%$address.addressid%}">
             <button class="submit">确认</button>
-            {%if $receiver%}
+            {%if $address%}
             <button class="delete">删除</button>
             {%/if%}
         </div>
-
-    </form>
 
 {%/block%}
 
