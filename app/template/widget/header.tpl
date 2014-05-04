@@ -1,8 +1,8 @@
 {%*通用头部*%}
 <header class="common-header">
-	<div class="logo">
+	<a href="/shop/home" class="logo">
 		掌心
-	</div>
+	</a>
 	<div class="search-box">
 		<span class="icon-search"></span>
 		<input class="search-input" placeholder="搜索"></input>

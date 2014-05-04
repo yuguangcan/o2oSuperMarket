@@ -16,8 +16,18 @@
     {%include file="widget/ucenternav.tpl" defaultindex=2%}
 
     {%foreach $list as $item%}
+    <div class="orderitem-wrapper">
         {%include file="widget/orderitem.tpl" item=$item%}
+    </div>
     {%/foreach%}
+
+    {%if $total > 5%}
+    	<div class="load-more notapcolor">点击加载更多</div>
+    	<script>
+    		F.context('total','{%$toatl%}');
+    	</script>
+    {%/if%}
+
     
 {%/block%}
 

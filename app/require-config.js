@@ -88,7 +88,33 @@ requirejs.config({
                 'zepto',
                 'common'
             ]
+        },
+        {
+            name: 'page/order-processing',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
+        },
+        {
+            name: 'page/order-cancel',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
+        },
+        {
+            name: 'page/order-done',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
         }
+
+
 
 
     ]

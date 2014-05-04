@@ -24,11 +24,12 @@
             {%if $item.prio == "1"%}
             收货人：{%$item.receiver%}&nbsp;&nbsp;{%$item.phone%} <br/>
             {%$item.province%}{%$item.city%}{%$item.district%}{%$item.community%}{%$item.unit%}{%$item.doorNo%}
-            {%/if%}
+            
             <script>
                 F.context('aid','{%$item.addressid%}');
             </script>
 
+            {%/if%}
         {%/foreach%}
     </a>
 

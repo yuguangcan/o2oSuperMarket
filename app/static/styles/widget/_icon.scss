@@ -20,5 +20,12 @@ $icon-retina: sprite-map("icons/*.png");
 .icon-arrow-left{
 	@include retina-sprite-background(arrow-left,$icon-retina);
 }
+.icon-unstar{
+	@include retina-sprite-background(unstar,$icon-retina);
+}
+.icon-star{
+	@include retina-sprite-background(star,$icon-retina);
+}
+
 
 
