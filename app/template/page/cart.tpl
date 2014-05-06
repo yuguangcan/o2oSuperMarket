@@ -12,19 +12,24 @@
 <!-- endbuild -->
 {%/block%}
 
+{%*通用顶部不需要*%}
+{%block name="header"%}
+{%/block%}
+
 {%block name="content"%}
+    {%include file="widget/titlebar.tpl" title="购物车"%}
 
     {%if $cart|count > 0%}
     <div class="content-wrapper">
         <div class="operation clearfix">
-            <a class="btn" id="selectall"><span>全选</span></a>
-            <a class="btn" id="delete"><span>删除</span></a>
+            <input type="checkbox" class="button-checkbox" id="selectall"></input><label for="selectall">全选</label>
+            <input type="button" class="button-gray" id="delete" disabled="disabled" value="删除"></input>
         </div>
 
         <ul class="product-list">
             {%foreach $cart as $item%}
             <li>
-                <input type="checkbox" class="select" value="{%$item.pid%}"></input>
+                <input type="checkbox" class="select button-checkbox" value="{%$item.pid%}"></input>
                 <div class="product">
                     <a href="/shop/product/detail/{%$item.pid%}.html" class="img">
                         <img src="{%$item.pics.pic%}"></img>
@@ -41,7 +46,7 @@
                             {%else%}
                                 <span class="current-price">￥{%$item.price%}</span>
                             {%/if%}
-                            &nbsp;&nbsp;x&nbsp;&nbsp;<input type="number" value="{%$item.cartNum%}" min="1" max="{%$item.productNum%}" class="product-count"></input>
+                            X<input type="number" value="{%$item.cartNum%}" min="1" max="{%$item.productNum%}" class="product-count"></input>
                         </div>
                     </div>
                 </div>

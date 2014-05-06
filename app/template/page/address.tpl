@@ -102,9 +102,9 @@
     	</div>
         <div class="address-set-default">
             {%if $address.prio == '1'%}
-                <input id="set-default" class="set-default" type="checkbox" checked="checked"></input>
+                <input id="set-default" class="button-checkbox set-default" type="checkbox" checked="checked"></input>
             {%else%}
-                <input id="set-default" class="set-default" type="checkbox"></input>
+                <input id="set-default" class="button-checkbox set-default" type="checkbox"></input>
             {%/if%}
                 <label for="set-default">设置为默认地址</label>
         </div>

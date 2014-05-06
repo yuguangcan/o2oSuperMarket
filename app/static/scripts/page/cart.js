@@ -6,10 +6,14 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 
 		function changeSelectAll(){
 			if(isSelectAll){
-				$('#selectall').find('span').html('全选');
+				$('#selectall').next().html('全选');
+				$('#selectall').get(0).checked = false;
+				$('#delete').get(0).disabled = true;
 				
 			}else{
-				$('#selectall').find('span').html('全不选');
+				$('#selectall').next().html('全不选');
+				$('#selectall').get(0).checked = true;
+				$('#delete').get(0).disabled = false;
 			}
 			isSelectAll = !isSelectAll;
 		}
@@ -53,10 +57,13 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 				}
 			});
 			if(selectCount == $('.select').length){
-				$('#selectall').find('span').html('全不选');
+				$('#selectall').next().html('全不选');
+				$('#selectall').get(0).checked = true;
+				$('#delete').get(0).disabled = false;
 				isSelectAll = true;
 			}else{
-				$('#selectall').find('span').html('全选');
+				$('#selectall').next().html('全选');
+				$('#selectall').get(0).checked = false;
 				isSelectAll = false;
 			}
 			calPriceAndCount();

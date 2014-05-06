@@ -17,13 +17,13 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="widget/titlebar.tpl" title="确认下单"%}
+    {%include file="widget/titlebar.tpl" title="确认订单"%}
 
-    <a href="/shop/addresslist" class="address section">
+    <a href="/shop/addresslist" class="address">
         {%foreach $address as $item%}
             {%if $item.prio == "1"%}
             收货人：{%$item.receiver%}&nbsp;&nbsp;{%$item.phone%} <br/>
-            {%$item.province%}{%$item.city%}{%$item.district%}{%$item.community%}{%$item.unit%}{%$item.doorNo%}
+            {%$item.city%}&nbsp;&nbsp;{%$item.district%}&nbsp;&nbsp;{%$item.community%}&nbsp;&nbsp;{%$item.unit%}&nbsp;&nbsp;{%$item.detail%}
             
             <script>
                 F.context('aid','{%$item.addressid%}');
@@ -31,9 +31,10 @@
 
             {%/if%}
         {%/foreach%}
+        <span></span>
     </a>
 
-    <ul class="product-list section">
+    <ul class="product-list">
         {%foreach $product.list as $item%}
         <li>
             <img src="{%$item.pics.pic%}" class="img"></img>
@@ -42,7 +43,7 @@
                 <p class="desc">{%$item.groupName%}</p>
                 <p class="price">单价：￥{%$item.price%}</p>
                 <p class="count">数量：{%$item.cartNum%}</p>
-                <p class="total">总价：￥{%$item.price * $item.cartNum%}</p>
+                <p class="totalprice">￥{%$item.price * $item.cartNum%}</p>
             </div>
         </li>
         {%/foreach%}
@@ -51,24 +52,32 @@
         </script>
     </ul>
 
-    <div class="pay section">
-        <input type="radio" name="pay" value="0"></input>
+    <div class="pay">
+        <input type="radio" name="pay" class="button-checkbox" value="0"></input>
         <label>货到付款</label>
         <br/>
-        <input type="radio" name="pay" value="1" checked="checked"></input>
+        <input type="radio" name="pay" class="button-checkbox" value="1" checked="checked"></input>
         <label>微信支付</label>
     </div>
 
-    <div class="totalprice">实付款：￥{%$product.total%}</div>
-
-    <div class="submit">
-        提交订单
+    <div class="deliver">
+        <input type="radio" name="deliver" class="button-checkbox" value="0"></input>
+        <label>自提</label>
+        <br/>
+        <input type="radio" name="deliver" class="button-checkbox" value="1" checked="checked"></input>
+        <label>送货上门</label>
     </div>
 
-{%/block%}
+    <div class="total">
+        <p>
+            实付款: 
+            <em class="price">￥{%$product.total%}</em>
+        </p>
+        <button class="submit" type="submit">
+            提交订单
+        </button>
+    </div>
 
-{%*通用底部不需要*%}
-{%block name="footer"%}
 {%/block%}
 
 {%*购物车图标不需要*%}

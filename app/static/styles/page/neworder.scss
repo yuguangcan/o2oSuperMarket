@@ -1,42 +1,103 @@
-.section{
-	padding: 15px 10px;
-	border-bottom:1px solid #e7ece0;
-}
 .address{
 	display: block;
 	color: #333;
+	background: #fff;
+	padding: 15px 15px 19px;
+	border-bottom: 1px solid #edece8;
+	font-size: 14px;
+	position: relative;
+	span{
+		position: absolute;
+		top: 25px;
+		right: 15px;
+		width: 8px;
+		height: 8px;
+		border-bottom: 2px solid #8d8c8a;
+		border-right: 2px solid #8d8c8a;
+		-webkit-transform: rotate(-45deg);
+	}
 }
 .product-list{
+	margin:0 15px;
 	li{
 		display: -webkit-box;
-		margin-bottom: 10px;
+		padding: 15px 0 19px;
+		border-bottom: 1px solid #edece8;
 		.img{
-			width: 40px;
-			height: 40px;
+			width: 75px;
+			height: 75px;
+			border: 1px solid #eae8e4;
 		}
 		.info{
-			margin-left: 5px;
-
+			margin-left: 10px;
+			-webkit-box-flex:1;
+			p{
+				color: #999;
+				margin-bottom: 3px;
+				font-size: 12px;
+			}
+			.name{
+				color: #333;
+				font-size: 14px;
+			}
+			.totalprice{
+				text-align: right;
+				color: #61cba0;
+				font-size: 16px;
+			}
 		}
 	}
 }
-.pay{
-	input{
-		-webkit-appearance:radio;
+.pay,.deliver{
+	margin:0 15px;
+	padding: 20px 0 10px;
+	border-bottom: 1px solid #edece8;
+	label{
+		margin-bottom: 10px;
+		display: inline-block;
+		position: relative;
+		top: 2px;
 	}
 }
-.totalprice{
-	text-align: right;
-	margin:10px 10px;
+.deliver{
+	border-bottom: none;
 }
-
-.submit{
-	height: 40px;
-	line-height: 40px;
-	margin: 15px 30px;
-	background: #61cba0;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	color: #fff;
-	text-align: center;
+.total{
+	background: #fffffe;
+	width: 100%;
+	height: 44px;
+	font-size: 16px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 15px;
+	em{
+		font-style: normal;
+	}
+	p{
+		position: absolute;
+		left: 0;
+		width: 55%;
+		height: 44px;
+		margin-left: 10px;
+		display: -webkit-box;
+		-webkit-box-align: center;
+		color: #666;
+		em{
+			color: #d02626;
+		}
+	}
+	button{
+		position: absolute;
+		right: 16px;
+		top: 7px;
+		background: #e8826b;
+		color: #fff;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 20px;
+		border: 0;
+		font-size: 16px;
+		-webkit-border-radius: 30px 30px;
+		border-radius: 30px 30px;
+	}
 }
