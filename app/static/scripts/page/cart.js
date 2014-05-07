@@ -61,6 +61,8 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 				$('#selectall').get(0).checked = true;
 				$('#delete').get(0).disabled = false;
 				isSelectAll = true;
+			}else if(selectCount==0){
+				$('#delete').get(0).disabled = true;
 			}else{
 				$('#selectall').next().html('全选');
 				$('#selectall').get(0).checked = false;
@@ -86,6 +88,11 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 		});
 
 		$('.product-count').on('change',function(){
+			var value = $(this).val();
+			if(isNaN(value) || value<0 ){
+				alert('请输入购买数量');
+				return;
+			}
 			if($(this).parents('li').find('.select').get(0).checked){
 				calPriceAndCount();
 			}

@@ -1,4 +1,4 @@
-require(['zepto','common'], function( $ ,common ) {
+require(['zepto','common','widget/cart'], function( $ ,common ,cart) {
 
 	$(function(){
 		$('.submit').click(function(){
@@ -17,9 +17,10 @@ require(['zepto','common'], function( $ ,common ) {
 			$.post('/shop/order/ordercommit',data,function(response){
 				var data = JSON.parse(response);
 				if(data && data.errno == 0 ){
+					cart.clear();
 					window.location.href="/shop/user/myorder?act=0";
 				}else{
-					alert(data.msg);
+					alert('库存不足');
 				}
 			});
 		});
