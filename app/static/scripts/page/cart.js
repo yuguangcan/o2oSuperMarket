@@ -62,11 +62,14 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 				$('#delete').get(0).disabled = false;
 				isSelectAll = true;
 			}else if(selectCount==0){
+				$('#selectall').next().html('全选');
+				$('#selectall').get(0).checked = false;
 				$('#delete').get(0).disabled = true;
+				isSelectAll = false;
 			}else{
 				$('#selectall').next().html('全选');
 				$('#selectall').get(0).checked = false;
-				isSelectAll = false;
+				$('#delete').get(0).disabled = false;
 			}
 			calPriceAndCount();
 		});

@@ -22,7 +22,7 @@ require(['zepto','common'], function( $ ,common ) {
 			$.post('/shop/addresscommit',data,function(response){
 				var data = JSON.parse(response);
 				if(data && data.errno == 0){
-					window.location.href = "/shop/addresslist";
+					window.history.go(-1);
 				}else{
 					alert();
 				}
@@ -33,7 +33,7 @@ require(['zepto','common'], function( $ ,common ) {
 			$.post('/shop/addresscommit',{addressid:$(this).parent().data("aid"),act:2},function(response){
 				var data = JSON.parse(response);
 				if(data && data.errno == 0){
-					window.location.href = "/shop/addresslist";
+					window.history.go(-1);
 				}else{
 					alert();
 				}

@@ -21,14 +21,16 @@
     <ul class="address-list">
         {%foreach $address as $item%}
             <li>
+                {%if $item.prio == "1"%}
+                <input type="checkbox" class="button-checkbox" checked="true"/>
+                {%else%}
+                <input type="checkbox" class="button-checkbox"/>
+                {%/if%}
                 <a href="/shop/address?addressid={%$item.addressid%}">
                     <div class="address-info">
                         {%$item.receiver%}&nbsp;&nbsp;{%$item.phone%}<br>
-                        {%$item.province%}{%$item.city%}{%$item.district%}{%$item.community%}{%$item.unit%}{%$item.detail%}
+                        {%$item.city%}&nbsp;&nbsp;{%$item.district%}&nbsp;&nbsp;{%$item.community%}&nbsp;&nbsp;{%$item.unit%}&nbsp;&nbsp;{%$item.detail%}
                     </div>
-                    {%if $item.prio == "1"%}
-                        <span class="prio"></span>
-                    {%/if%}
                 </a>
             </li>
         {%/foreach%}
