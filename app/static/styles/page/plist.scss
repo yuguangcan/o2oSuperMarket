@@ -91,6 +91,21 @@
             }
         }
     }
+    .order-panel{
+        display: none;
+        position: absolute;
+        z-index: 99;
+        width: 100%;
+        background: #61cba0;
+        a{
+            display: block;
+            text-align: center;
+            height: 43px;
+            line-height: 43px;
+            color: #fff;
+            border-top: 1px solid #6bdfb0;
+        }
+    }
     
 }
 
@@ -100,6 +115,9 @@
 		position: relative;
 		padding: 15px 0;
 		border-bottom: 1px solid #eae8e4;
+        &:last-child{
+            border-bottom:none;
+        }
 		.img{
 			float: left;
 			width: 74px;

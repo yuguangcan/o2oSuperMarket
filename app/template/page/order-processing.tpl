@@ -24,7 +24,7 @@
     {%if $total > 5%}
     	<div class="load-more notapcolor">点击加载更多</div>
     	<script>
-    		F.context('total','{%$toatl%}');
+    		F.context('total','{%$total%}');
     	</script>
     {%/if%}
 

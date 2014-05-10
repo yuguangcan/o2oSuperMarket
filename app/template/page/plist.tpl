@@ -16,9 +16,13 @@
 
 	<div class="navbar">
         <ul class="nav-list">
-            <li id="nav-category" class="notapcolor">{%$currentcategory.cname%}<span></span></li>
-            <li class="notapcolor">{%$currentsort.sname%}<span></span></li>
-            <li class="notapcolor">只看自营<span></span></li>
+            {%if $word %}
+                <li class="notapcolor">{%$currentcategory.cname%}</li>
+            {%else%}
+                <li id="nav-category" class="notapcolor">{%$currentcategory.cname%}<span></span></li>
+            {%/if%}
+            
+            <li id="nav-sort" class="notapcolor">{%$currentsort.sname%}排序<span></span></li>
         </ul>
         <div class="category-panel">
             <ul class="category-list">
@@ -50,6 +54,15 @@
                     </ul>
                 {%/foreach%}
             </div>
+        </div>
+        <div class="order-panel">
+            {%foreach $sortlist as $item%}
+                {%if $item.sid != $currentsort.sid%}
+                <a href="/shop/product/plist/{%$currentcategory.cid%}.html?sort={%$item.sid%}">
+                    {%$item.sname%}排序
+                </a>
+                {%/if%}
+            {%/foreach%}
         </div>
     </div>
 
@@ -87,7 +100,10 @@
     {%if $total > 10%}
         <div class="load-more notapcolor">点击加载更多</div>
         <script>
-            F.context('total','{%$toatl%}');
+            F.context('total','{%$total%}');
+            F.context('cid','{%$currentcategory.cid%}');
+            F.context('sort','{%$currentsort.sid%}');
+            F.context('word','{%$word%}');
         </script>
     {%/if%}
 {%/block%}

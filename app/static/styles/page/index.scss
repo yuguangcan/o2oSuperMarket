@@ -46,16 +46,16 @@
                 border-bottom: none;
             }
             a{
-                display: block;
+                display: -webkit-box;
+                -webkit-box-align: center;
             }
             .img{
-                float: left;
                 width: 74px;
                 height: 74px;
             }
             .info{
-                margin-left: 90px;
-                width: 150px;
+                margin-left: 10px;
+                -webkit-box-flex:1;
                 .name{
                     color: #333;
                     line-height: 22px;

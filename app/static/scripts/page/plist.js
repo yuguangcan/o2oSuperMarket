@@ -1,8 +1,15 @@
 require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 
 	$(function(){
+		var orderpanel = $('.order-panel'),
+			categorypanel = $('.category-panel');
 		$('#nav-category').click(function(){
-			$('.category-panel').toggle();
+			orderpanel.hide();
+			categorypanel.toggle();
+		});
+		$('#nav-sort').click(function(){
+			categorypanel.hide();
+			orderpanel.toggle();
 		});
 		var navCategoryList = $('.navbar .category-list li'),
 			navSubCategoryList = $('.navbar .sub-category-list ul'),
@@ -24,20 +31,29 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 		});
 
 		var total = F.context('total'),
-			pn = 2,
-			rn = 5;
+			pn = 10,
+			rn = 10,
+			isLoading = false,
+			url = !F.context('word')?'/shop/product/listmore':'/shop/searchmore';
+		
 		$('.load-more').click(function(){
-			$.post('/shop/user/ordermore',{
-				act : 0,
-				pn : pn,
-				rn : rn
+			if(isLoading){
+				return;
+			}
+			isLoading = true;
+			$.post(url,{
+				cid: F.context('cid'),
+				rn:rn,
+				pn:pn,
+				sort:F.context('sort')
 			},function(response){
 				if(response){
 					$('.product-list').append(response);
 					if(pn*rn >= total){
 						$('.load-more').remove();
 					}
-					pn = pn + 1;
+					pn = pn + 10;
+					isLoading = false;
 				}
 			});
 		});

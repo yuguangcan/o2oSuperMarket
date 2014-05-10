@@ -4,9 +4,14 @@ require(['zepto','common','widget/orderitem'], function( $ ,common ,orderitem ) 
 		orderitem.init($('.orderitem-wrapper'));
 
 		var total = F.context('total'),
-			pn = 2,
-			rn = 5;
+			pn = 5,
+			rn = 5,
+			isLoading = false;
 		$('.load-more').click(function(){
+			if(isLoading){
+				return;
+			}
+			isLoading = true;
 			$.post('/shop/user/ordermore',{
 				act : 4,
 				pn : pn,
@@ -17,10 +22,12 @@ require(['zepto','common','widget/orderitem'], function( $ ,common ,orderitem ) 
 					if(pn*rn >= total){
 						$('.load-more').remove();
 					}
-					pn = pn + 1;
+					pn = pn + 5;
+					isLoading = false;
 				}
 			});
 		});
+
 
 	});
 
