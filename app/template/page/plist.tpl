@@ -17,7 +17,7 @@
 	<div class="navbar">
         <ul class="nav-list">
             {%if $word %}
-                <li class="notapcolor">{%$currentcategory.cname%}</li>
+                <li class="notapcolor">关于“{%$word%}”的商品</li>
             {%else%}
                 <li id="nav-category" class="notapcolor">{%$currentcategory.cname%}<span></span></li>
             {%/if%}
