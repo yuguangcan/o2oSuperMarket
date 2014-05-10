@@ -22,6 +22,26 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 			e.stopPropagation();
 			cart.add($(this).data('pid'),1,e.target);
 		});
+
+		var total = F.context('total'),
+			pn = 2,
+			rn = 5;
+		$('.load-more').click(function(){
+			$.post('/shop/user/ordermore',{
+				act : 0,
+				pn : pn,
+				rn : rn
+			},function(response){
+				if(response){
+					$('.product-list').append(response);
+					if(pn*rn >= total){
+						$('.load-more').remove();
+					}
+					pn = pn + 1;
+				}
+			});
+		});
+
 	});
 
 });

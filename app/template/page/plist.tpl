@@ -83,6 +83,13 @@
 		</li>
 		{%/foreach%}
 	</ul>
+
+    {%if $total > 10%}
+        <div class="load-more notapcolor">点击加载更多</div>
+        <script>
+            F.context('total','{%$toatl%}');
+        </script>
+    {%/if%}
 {%/block%}
 
 {%block name="js"%}
