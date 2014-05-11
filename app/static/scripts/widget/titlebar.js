@@ -1,8 +1,13 @@
 define(['zepto'], function ($) {
     return {
-    	init :function(){
+    	init :function(callback){
     		$('#navback').click(function(){
-    			window.history.go(-1);
+    			if(typeof callback == 'function'){
+    				callback();
+    			}else{
+    				window.history.go(-1);
+    			}
+    			
     		});
    	    }
 	};

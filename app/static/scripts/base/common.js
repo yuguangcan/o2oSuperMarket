@@ -1,10 +1,9 @@
 
-define(['zepto','widget/header','widget/usericon','widget/cart','widget/titlebar'], function( $ ,header ,usericon ,cart ,titlebar) {
+define(['zepto','widget/header','widget/usericon','widget/cart'], function( $ ,header ,usericon ,cart ) {
 	$(function(){
 		header.init();
 		usericon.init();
 		cart.init();
-		titlebar.init();
 	});
 	
 	return {};

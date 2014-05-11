@@ -41,19 +41,25 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 				return;
 			}
 			isLoading = true;
-			$.post(url,{
+			$.post(url,!F.context('word')?{
 				cid: F.context('cid'),
+				rn:rn,
+				pn:pn,
+				sort:F.context('sort')
+			}:{
+				word: F.context('word'),
 				rn:rn,
 				pn:pn,
 				sort:F.context('sort')
 			},function(response){
 				if(response){
 					$('.product-list').append(response);
-					if(pn*rn >= total){
+					pn = pn + rn;
+					isLoading = false;
+					if(pn >= total){
 						$('.load-more').remove();
 					}
-					pn = pn + 10;
-					isLoading = false;
+
 				}
 			});
 		});

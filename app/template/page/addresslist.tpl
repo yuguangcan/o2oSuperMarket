@@ -17,27 +17,45 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="widget/titlebar.tpl" title="选择地址"%}
+    {%include file="widget/titlebar.tpl" title="收货地址" hideusericon=true%}
     <ul class="address-list">
         {%foreach $address as $item%}
-            <li>
+            <li data-aid="{%$item.addressid%}">
                 {%if $item.prio == "1"%}
-                <input type="checkbox" class="button-checkbox" checked="true"/>
+                    {%if $fr == 'user'%}
+                    <input type="checkbox" class="button-checkbox" checked="true"/>
+                    {%else%}
+                    <input id="order-address-change{%$item.addressid%}" type="checkbox" class="button-checkbox order-address-change" checked="true"/>
+                    {%/if%}
                 {%else%}
-                <input type="checkbox" class="button-checkbox"/>
+                    {%if $fr != 'user'%}
+                    <input id="order-address-change{%$item.addressid%}" type="checkbox" class="button-checkbox order-address-change"/>
+                    {%/if%}
                 {%/if%}
+                {%if $fr == 'user'%}
                 <a href="/shop/address?addressid={%$item.addressid%}">
-                    <div class="address-info">
+                {%/if%}
+                    {%if $fr == 'user'%}
+                    <label class="address-info">
+                    {%else%}
+                    <label class="address-info" for="order-address-change{%$item.addressid%}">
+                    {%/if%}
                         {%$item.receiver%}&nbsp;&nbsp;{%$item.phone%}<br>
                         {%$item.city%}&nbsp;&nbsp;{%$item.district%}&nbsp;&nbsp;{%$item.community%}&nbsp;&nbsp;{%$item.unit%}&nbsp;&nbsp;{%$item.detail%}
-                    </div>
+                    </label>
+                {%if $fr == 'user'%}
                 </a>
+                {%/if%}
             </li>
         {%/foreach%}
     </ul>
     <a class="add-address" href="/shop/address?edit=0">
         新增收货地址
     </a>
+    <script>
+        F.context('fr','{%$fr%}');
+        F.context('fr_url','{%$fr_url%}');
+    </script>
 {%/block%}
 
 {%*购物车图标不需要*%}

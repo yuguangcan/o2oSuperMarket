@@ -8,5 +8,8 @@
 			掌心超市
 		{%/if%}
 	</div>
-	{%include file="widget/usericon.tpl"%}
+	{%if $hideusericon == true%}
+	{%else%}
+		{%include file="widget/usericon.tpl"%}
+	{%/if%}
 </header>

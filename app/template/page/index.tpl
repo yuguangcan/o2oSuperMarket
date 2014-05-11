@@ -34,7 +34,7 @@
                                 <img class="img" src="{%$item.pic%}"></img>
                                 <div class="info">
                                     <div class="name">{%$item.cname%}</div>
-                                    <div class="sub">方便面/八宝粥/方便米饭</div>
+                                    <div class="sub">{%$item.desc%}</div>
                                 </div>
                             </a>
                         </li>

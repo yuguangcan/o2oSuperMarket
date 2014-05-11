@@ -19,11 +19,11 @@ require(['zepto','common','widget/orderitem'], function( $ ,common ,orderitem ) 
 			},function(response){
 				if(response){
 					$('.orderitem-wrapper').append(response);
-					if(pn*rn >= total){
+					pn = pn + rn;
+					isLoading = false;
+					if(pn >= total){
 						$('.load-more').remove();
 					}
-					pn = pn + 5;
-					isLoading = false;
 				}
 			});
 		});

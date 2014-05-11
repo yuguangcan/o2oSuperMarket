@@ -22,14 +22,14 @@
     {%if $cart|count > 0%}
     <div class="content-wrapper">
         <div class="operation clearfix">
-            <input type="checkbox" class="button-checkbox" id="selectall"></input><label for="selectall">全选</label>
-            <input type="button" class="button-gray" id="delete" disabled="disabled" value="删除"></input>
+            <input type="checkbox" class="button-checkbox" id="selectall" checked="checked"></input><label for="selectall">全选</label>
+            <input type="button" class="button-gray" id="delete"  value="删除"></input>
         </div>
 
         <ul class="product-list">
             {%foreach $cart as $item%}
             <li>
-                <input type="checkbox" class="select button-checkbox" value="{%$item.pid%}"></input>
+                <input type="checkbox" class="select button-checkbox" value="{%$item.pid%}" checked="checked"></input>
                 <div class="product">
                     <a href="/shop/product/detail/{%$item.pid%}.html" class="img">
                         <img src="{%$item.pics.pic%}"></img>

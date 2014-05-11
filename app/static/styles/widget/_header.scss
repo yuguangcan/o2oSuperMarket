@@ -24,11 +24,14 @@
 		.icon-search{
 			display: inline-block;
 		}
+		form{
+			display: inline-block;
+		}
 		input{
 			padding: 0 5px;
 			width: 160px;
 			height: 26px;
-			line-height: 26px;
+			line-height: normal;
 			font-size: 16px;
 		}
 		input::-webkit-input-placeholder{

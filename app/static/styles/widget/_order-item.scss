@@ -53,7 +53,6 @@
 		margin-top: 5px;
 		color: #333;
 		p{
-			height: 22px;
 			line-height: 22px;
 		}
 		.title{
@@ -69,7 +68,7 @@
 			.product-list{
 				height: 140px;
 				overflow:hidden;
-				margin: 5px 0 10px;
+				margin: 5px 0;
 				li{
 					display: inline-block;
 					margin-right: 4px;
@@ -95,6 +94,13 @@
 		}
 		.other{
 			display: none;
+			p{
+				display: -webkit-box;
+				.other-info{
+					-webkit-box-flex:1;
+					display: block;
+				}
+			}
 		}
 	}
 	.more{

@@ -1,12 +1,13 @@
 define(['zepto'], function ($) {
-	var userIcon = $('#user'),
+	var userIcon = $('#user'), 
 		userMenu = $('#uermenu');
     return {
     	init :function(){
+            if(userIcon.length == 0){
+                return;
+            }
     		userIcon.click(function(e){
-    			if(e.target == userMenu.get(0) || $.contains(userMenu.get(0),e.target)){
-    				return;
-    			}
+                e.stopPropagation();
     			userMenu.toggleClass('show');
     		});
     		$(document.body).on('touchend',function(e){

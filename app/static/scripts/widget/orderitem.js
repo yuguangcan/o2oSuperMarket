@@ -62,7 +62,10 @@ define(['zepto'], function ($) {
        			},function(response){
        				var data = JSON.parse(response);
        				if(data && data.errno == 0){
-       					alert('取消成功');       					
+       					alert('取消成功'); 
+                setTimeout(function(){
+                  window.location.reload();
+                },200);      					
        				}else{
        					alert('取消失败，请稍后再试');
        				}

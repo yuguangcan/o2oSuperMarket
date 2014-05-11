@@ -1,7 +1,8 @@
-require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
+require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common ,cart ,titlebar) {
 
 	$(function(){
-
+		titlebar.init();
+		
 		var isSelectAll = false;
 
 		function changeSelectAll(){
@@ -118,7 +119,9 @@ require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
 					alert();
 				}
 			});
-		})
+		});
+
+		calPriceAndCount();
 	});
 
 });

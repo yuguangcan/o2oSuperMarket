@@ -7,6 +7,7 @@ $icon-retina: sprite-map("icons/*.png");
 }
 .icon-search{
 	@include retina-sprite-background(search,$icon-retina);
+	background-position: 0 -92px;
 }
 .icon-cart{
 	@include retina-sprite-background(cart,$icon-retina);

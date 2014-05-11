@@ -19,18 +19,23 @@
 {%block name="content"%}
     {%include file="widget/titlebar.tpl" title="确认订单"%}
 
-    <a href="/shop/addresslist" class="address">
-        {%foreach $address as $item%}
-            {%if $item.prio == "1"%}
-            收货人：{%$item.receiver%}&nbsp;&nbsp;{%$item.phone%} <br/>
-            {%$item.city%}&nbsp;&nbsp;{%$item.district%}&nbsp;&nbsp;{%$item.community%}&nbsp;&nbsp;{%$item.unit%}&nbsp;&nbsp;{%$item.detail%}
-            
-            <script>
-                F.context('aid','{%$item.addressid%}');
-            </script>
+    <a href="/shop/addresslist?fr=order" class="address">
+        收货人：
+        {%if $address|count >0 %}
+            {%foreach $address as $item%}
+                {%if $item.prio == "1"%}
+                {%$item.receiver%}&nbsp;&nbsp;{%$item.phone%} <br/>
+                {%$item.city%}&nbsp;&nbsp;{%$item.district%}&nbsp;&nbsp;{%$item.community%}&nbsp;&nbsp;{%$item.unit%}&nbsp;&nbsp;{%$item.detail%}
+                
+                <script>
+                    F.context('aid','{%$item.addressid%}');
+                </script>
 
-            {%/if%}
-        {%/foreach%}
+                {%/if%}
+            {%/foreach%}
+        {%else%}
+            <i>请添加收货地址</i>
+        {%/if%}
         <span></span>
     </a>
 

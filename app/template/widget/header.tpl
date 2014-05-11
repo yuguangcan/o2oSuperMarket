@@ -5,7 +5,9 @@
 	</a>
 	<div class="search-box">
 		<span class="icon-search"></span>
-		<input class="search-input" placeholder="搜索"></input>
+		<form action="/shop/search" method="get">
+			<input class="search-input" type="text" placeholder="搜索"></input>
+		</form>
 	</div>
 	{%include file="widget/usericon.tpl"%}
 </header>

@@ -1,7 +1,14 @@
-require(['zepto','common','widget/cart'], function( $ ,common ,cart) {
+require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common ,cart,titlebar) {
 
 	$(function(){
+		titlebar.init(function(){
+			cart.toCartPage();
+		});
 		$('.submit').click(function(){
+			if(!F.context('aid')){
+				$(window).scrollTop(document.body.scrollHeight);
+				return;
+			}
 			var pids = '',
 				product = F.context('product');
 

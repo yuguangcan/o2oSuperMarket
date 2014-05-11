@@ -64,17 +64,16 @@
 			</ul>
 		</div>
 		<div class="other">
-			<p>支付方式：</p>
-			<p>派送方式：
+			<p>支付方式：
 				{%if $item.pay_type == 0%}
 					货到付款
 				{%elseif $item.pay_type == 0%}
 					微信支付
 				{%/if%}
 			</p>
-			<p>收货地址：{%$item.address%}</p>
+			<p><span>收货地址：</span><span class="other-info">{%$item.address%}</span></p>
 			<p>派送员：{%$item.sender_name%}</p>
-			<p>下单日期：{%$item.create_time%}</p>
+			<p><span>下单日期：</span><span class="other-info">{%$item.create_time%}</span></p>
 		</div>
 		<div class="more">
 			查看更多<span></span>

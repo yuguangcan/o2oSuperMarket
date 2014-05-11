@@ -1,7 +1,7 @@
-require(['zepto','common'], function( $ ,common ) {
+require(['zepto','common','widget/titlebar'], function( $ ,common ,titlebar) {
 
 	$(function(){
-
+		titlebar.init();
 		$('.submit').click(function(){
 			if($('#city').val() == -1){
 				return;
@@ -22,9 +22,9 @@ require(['zepto','common'], function( $ ,common ) {
 			$.post('/shop/addresscommit',data,function(response){
 				var data = JSON.parse(response);
 				if(data && data.errno == 0){
-					window.history.go(-1);
+					window.location.href = document.referrer;
 				}else{
-					alert();
+					alert('添加失败，请稍后再试');
 				}
 			})
 		});
@@ -33,9 +33,9 @@ require(['zepto','common'], function( $ ,common ) {
 			$.post('/shop/addresscommit',{addressid:$(this).parent().data("aid"),act:2},function(response){
 				var data = JSON.parse(response);
 				if(data && data.errno == 0){
-					window.history.go(-1);
+					window.location.href = document.referrer;
 				}else{
-					alert();
+					alert('删除失败，请稍后再试');
 				}
 			})
 
