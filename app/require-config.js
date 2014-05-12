@@ -112,7 +112,16 @@ requirejs.config({
                 'zepto',
                 'common'
             ]
+        },
+        {
+            name: 'page/feedback',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
         }
+
 
 
 
