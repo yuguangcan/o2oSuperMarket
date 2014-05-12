@@ -120,9 +120,15 @@ requirejs.config({
                 'zepto',
                 'common'
             ]
+        },
+        {
+            name: 'page/sender',
+            exclude: [
+                'requirelib',
+                'zepto',
+                'common'
+            ]
         }
-
-
 
 
 

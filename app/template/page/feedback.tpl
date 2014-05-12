@@ -1,4 +1,4 @@
-{%*首页*%}
+{%*反馈页*%}
 
 {%extends file="layout/layout.tpl"%} 
 
@@ -19,6 +19,11 @@
     <button></button>
 
 {%/block%}
+
+{%*购物车图标不需要*%}
+{%block name="cart"%}
+{%/block%}
+
 
 {%block name="js"%}
 <script data-main="/static/scripts/page/feedback" src="/static/scripts/require.js"></script>
