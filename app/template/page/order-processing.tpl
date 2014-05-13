@@ -15,12 +15,12 @@
 {%block name="content"%}
     {%include file="widget/ucenternav.tpl" defaultindex=1%}
 
+    <div class="orderitem-wrapper">
     {%foreach $list as $item%}
-    	<div class="orderitem-wrapper">
-        	{%include file="widget/orderitem.tpl" item=$item%}
-        </div>
+        {%include file="widget/orderitem.tpl" item=$item%}
     {%/foreach%}
-    
+    </div>
+
     {%if $total > 5%}
     	<div class="load-more notapcolor">点击加载更多</div>
     	<script>
