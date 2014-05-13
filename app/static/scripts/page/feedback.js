@@ -12,7 +12,7 @@ require(['zepto','common',], function( $ ,common  ) {
 				return;
 			}
 			isSubmittin = true;
-			$.post('/shop/feedback',{content:content},function(response){
+			$.post('/shop/feedback',{co:content},function(response){
 				var data = JSON.parse(response);
 				if(response.errno == 0){
 					alert('多谢您的建议');

@@ -17,18 +17,25 @@ require(['zepto','common'], function( $ ,common  ) {
 				self.attr('open',1);
 				self.html('收起<span></span').addClass('expand');
 			}
-		}).on('click','.get-submit',function(){
+		}).on('click','.fight-submit',function(){
 			if(isSubmmiting){
 				return;
 			}
+			var _self = this;
 			isSubmmiting = true;
-   			$.post('/shop/order/ordercancel',{
+   			$.post('/shop/order/orderfight',{
    				oid:$(this).parents('.order-item').data('oid')
    			},function(response){
    				var data = JSON.parse(response);
    				isSubmmiting = false;
-   				if(data && data.errno == 0){
-   					alert('抢单成功'); 
+   				if(data){
+   					if(data.errno == 0){
+   						alert('抢单成功'); 
+   					}
+   					if(data.errno == -1){
+   						alert('该订单已被抢');
+   						$(_self).parents('.order-item').hide();
+   					}
             		      					
    				}else{
    					alert('抢单失败');
@@ -40,7 +47,7 @@ require(['zepto','common'], function( $ ,common  ) {
 				return;
 			}
 			isSubmmiting = true;
-   			$.post('/shop/order/ordercancel',{
+   			$.post('/shop/order/orderdone',{
    				oid:$(this).parents('.order-item').data('oid')
    			},function(response){
    				var data = JSON.parse(response);

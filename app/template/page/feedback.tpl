@@ -13,10 +13,11 @@
 {%/block%}
 
 {%block name="content"%}
-    <p class="feedback-info">请告诉我们您的建议和意见</p>
-    <p class="feedback-info">让我们为您带来更好的服务</p>
-    <textarea class="feedback-content"></textarea>
-    <button></button>
+    <p class="feedback-info">请告诉我们您的建议和意见<br/>让我们为您带来更好的服务</p>
+    <div class="feedback-content-wrapper">
+	    <textarea class="feedback-content"></textarea>
+	</div>
+    <button class="submit">提交反馈</button>
 
 {%/block%}
 

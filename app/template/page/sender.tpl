@@ -20,15 +20,12 @@
 {%block name="content"%}
 	{%*个人中心tab*%}
 	<nav class="ucenter-nav">
-		{%if $action==1%}
+		{%if $action=='fight'%}
 		<a href="javascript:;" class="cur">抢单</a>
-		{%else%}
 		<a href="/shop/user/myorder?act=0">结单</a>
-		{%/if%}
-		{%if $action==2%}
-		<a href="javascript:;"  class="cur">抢单</a>
-		{%else%}
-		<a href="/shop/user/myorder?act=4">结单</a>
+		{%elseif $action=='close'%}
+		<a href="/shop/order/orderfightlist">抢单</a>
+		<a href="javascript:;" class="cur">结单</a>
 		{%/if%}
 	</nav>
 
@@ -37,11 +34,11 @@
         	<div class="order-item" data-oid={%$item.oid%}>
 				<div class="info">
 					<div class="title">
-						{%if $action == 1%}
-						<button class="get-submit submit-btn">
+						{%if $action == 'fight'%}
+						<button class="fight-submit submit-btn">
 							抢单
 						</button>
-						{%elseif $action == 2%}
+						{%elseif $action == 'close'%}
 						<button class="close-submit cancel-btn">
 							结单
 						</button>
@@ -54,12 +51,12 @@
 						<p>支付方式：
 							{%if $item.pay_type == 0%}
 								货到付款
-							{%elseif $item.pay_type == 0%}
+							{%elseif $item.pay_type == 1%}
 								微信支付
 							{%/if%}
 						</p>
 						<p><span>收货地址：</span><span class="other-info">{%$item.address%}</span></p>
-						<p>派送员：{%$item.sender_name%}</p>
+						
 						<p><span>下单日期：</span><span class="other-info">{%$item.create_time%}</span></p>
 					</div>
 					<div class="detail">

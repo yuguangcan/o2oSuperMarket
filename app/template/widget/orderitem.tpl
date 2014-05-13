@@ -67,7 +67,7 @@
 			<p>支付方式：
 				{%if $item.pay_type == 0%}
 					货到付款
-				{%elseif $item.pay_type == 0%}
+				{%elseif $item.pay_type == 1%}
 					微信支付
 				{%/if%}
 			</p>

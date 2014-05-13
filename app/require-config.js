@@ -8,6 +8,7 @@ requirejs.config({
         'requirelib': '../../bower_components/requirejs/require',
         'zepto': '../../bower_components/zepto/zepto',
         'swipe': '../../bower_components/swipe/swipe',
+        'zepto-module': 'base/zepto-modules',
         'common': 'base/common'
     },
 
@@ -30,6 +31,7 @@ requirejs.config({
             include: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -38,6 +40,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -46,6 +49,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -54,6 +58,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -62,6 +67,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -70,6 +76,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -78,6 +85,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -86,6 +94,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -94,6 +103,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -102,6 +112,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -110,6 +121,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -118,6 +130,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         },
@@ -126,6 +139,7 @@ requirejs.config({
             exclude: [
                 'requirelib',
                 'zepto',
+                'zepto-module',
                 'common'
             ]
         }
