@@ -4,17 +4,21 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 		
 		var fr_url = window.localStorage.getItem('productFrUrl'),
 			refer = document.referrer;
-		if(!fr_url && refer.indexOf('shop/cart')==-1){
+		if( refer.indexOf('shop/cart')==-1){
 			window.localStorage.setItem('productFrUrl',refer);
 			fr_url = refer;
 		}
 		titlebar.init(function(){
-			if(!fr_url){
-				window.location.href="/shop/home";
+			if(refer.indexOf('shop/cart')!=-1){
+				window.history.go(-1);
 			}else{
-				window.location.href = fr_url;
+				if(!fr_url){
+					window.location.href="/shop/home";
+				}else{
+					window.location.href = fr_url;
+				}
 			}
-			
+						
 		});
 
 		var productCount = $('#product-count');

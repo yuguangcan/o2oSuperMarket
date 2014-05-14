@@ -2,14 +2,12 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 
 	$(function(){
 
-		var fr_url = window.localStorage.getItem('cartFrUrl'),
-			refer = document.referrer;
-		if(!fr_url && refer.indexOf('shop/neworder')==-1){
-			window.localStorage.setItem('cartFrUrl',refer);
-			fr_url = refer;
-		}
 		titlebar.init(function(){
-			window.location.href = fr_url;
+			if(document.referrer.indexOf('shop/plist') !=-1 || document.referrer.indexOf('shop/home') !=-1){
+				window.history.go(-1);
+			}else{
+				window.location.href = '/shop/home';
+			}
 		});
 
 		var isSelectAll = true;
