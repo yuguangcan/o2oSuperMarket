@@ -22,7 +22,7 @@
     {%if $cart|count > 0%}
     <div class="content-wrapper">
         <div class="operation clearfix">
-            <input type="checkbox" class="button-checkbox" id="selectall" checked="checked"></input><label for="selectall">全选</label>
+            <input type="checkbox" class="button-checkbox" id="selectall" checked="checked"></input><label for="selectall">全不选</label>
             <input type="button" class="button-gray" id="delete"  value="删除"></input>
         </div>
 
@@ -83,6 +83,9 @@
 {%block name="cart"%}
 {%/block%}
 
+{%*通用底部不需要*%}
+{%block name="footer"%}
+{%/block%}
 
 {%block name="js"%}
 <script data-main="/static/scripts/page/cart" src="/static/scripts/require.js"></script>

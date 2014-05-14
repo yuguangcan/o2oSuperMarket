@@ -10,7 +10,7 @@
         </li>
         <li>|</li>
         <li>
-            <a href="/shop/home">反馈</a>
+            <a href="/shop/feedbackview">反馈</a>
         </li>
     </ul>
     <div>&copy;{%date('Y')%}&nbsp;掌心超市</div>

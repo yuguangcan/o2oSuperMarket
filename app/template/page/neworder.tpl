@@ -89,6 +89,10 @@
 {%block name="cart"%}
 {%/block%}
 
+{%*通用底部不需要*%}
+{%block name="footer"%}
+{%/block%}
+
 
 {%block name="js"%}
 <script data-main="/static/scripts/page/neworder" src="/static/scripts/require.js"></script>

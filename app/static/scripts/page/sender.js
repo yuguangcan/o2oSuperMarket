@@ -74,7 +74,8 @@ require(['zepto','common'], function( $ ,common  ) {
 			isLoading = true;
 			$.post('/shop/user/ordermore',{
 				pn : pn,
-				rn : rn
+				rn : rn,
+				action : F.context('action')
 			},function(response){
 				if(response){
 					$('.orderitem-wrapper').append(response);

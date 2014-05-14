@@ -1,6 +1,21 @@
-require(['zepto','common','widget/cart'], function( $ ,common ,cart ) {
+require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common ,cart ,titlebar) {
 
 	$(function(){
+		
+		var fr_url = window.localStorage.getItem('productFrUrl'),
+			refer = document.referrer;
+		if(!fr_url && refer.indexOf('shop/cart')==-1){
+			window.localStorage.setItem('productFrUrl',refer);
+			fr_url = refer;
+		}
+		titlebar.init(function(){
+			if(!fr_url){
+				window.location.href="/shop/home";
+			}else{
+				window.location.href = fr_url;
+			}
+			
+		});
 
 		var productCount = $('#product-count');
 		$('.operation .add-minus .add').click(function(){

@@ -14,7 +14,7 @@
 	}
 }
 .product-list{
-	padding: 0 15px;
+	padding: 0 15px 44px;
 	li{
 		padding: 15px 0;
 		border-bottom: 1px solid #e7ece0;
@@ -83,7 +83,8 @@
 	height: 44px;
 	font-size: 16px;
 	overflow: hidden;
-	position: relative;
+	position: fixed;
+	bottom: 0;
 	em{
 		font-style: normal;
 	}

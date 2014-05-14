@@ -1,9 +1,18 @@
 require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common ,cart ,titlebar) {
 
 	$(function(){
-		titlebar.init();
-		
-		var isSelectAll = false;
+
+		var fr_url = window.localStorage.getItem('cartFrUrl'),
+			refer = document.referrer;
+		if(!fr_url && refer.indexOf('shop/neworder')==-1){
+			window.localStorage.setItem('cartFrUrl',refer);
+			fr_url = refer;
+		}
+		titlebar.init(function(){
+			window.location.href = fr_url;
+		});
+
+		var isSelectAll = true;
 
 		function changeSelectAll(){
 			if(isSelectAll){
