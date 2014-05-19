@@ -27,5 +27,12 @@ $icon-retina: sprite-map("icons/*.png");
 .icon-star{
 	@include retina-sprite-background(star,$icon-retina);
 }
+.icon-gotop{
+	@include retina-sprite-background(gotop,$icon-retina);
+}
+.icon-switch{
+	@include retina-sprite-background(switch,$icon-retina);
+}
+
 
 

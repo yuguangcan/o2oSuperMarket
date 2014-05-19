@@ -41,6 +41,7 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 			}
 			if(productCount.val()-0 > productCount.attr('max')){
 				alert('库存不足');
+				productCount.val(productCount.attr('max'));
 				return;
 			}
 			cart.add($(this).data('pid'),parseInt(productCount.val()),e.target);

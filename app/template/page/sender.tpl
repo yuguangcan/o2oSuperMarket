@@ -22,18 +22,23 @@
 	<nav class="ucenter-nav">
 		{%if $action=='fight'%}
 		<a href="javascript:;" class="cur">抢单</a>
-		<a href="/shop/user/myorder?act=0">结单</a>
-		{%elseif $action=='done'%}
+		<a href="http://www.palmshops.cn/shop/order/orderfightlist?action=close">结单</a>
+		{%elseif $action=='close'%}
 		<a href="/shop/order/orderfightlist">抢单</a>
 		<a href="javascript:;" class="cur">结单</a>
 		{%/if%}
 	</nav>
-
+    {%if $list|count > 0%}
     <div class="orderitem-wrapper">
     {%foreach $list as $item%}
         {%include file="widget/senderitem.tpl" item=$item action=$action%}
     {%/foreach%}
     </div>
+    {%else%}
+        <div class="empty">
+            目前还没有订单
+        </div>
+    {%/if%}
 
     {%if $total > 5%}
     	<div class="load-more notapcolor">点击加载更多</div>
@@ -48,6 +53,14 @@
 
 {%*购物车图标不需要*%}
 {%block name="cart"%}
+{%/block%}
+
+{%*gotop不需要*%}
+{%block name="gotop"%}
+{%/block%}
+
+{%*通用底部不需要*%}
+{%block name="footer"%}
 {%/block%}
 
 

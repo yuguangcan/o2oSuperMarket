@@ -21,6 +21,10 @@
 
 {%/block%}
 
+{%*gotop不需要*%}
+{%block name="gotop"%}
+{%/block%}
+
 {%*购物车图标不需要*%}
 {%block name="cart"%}
 {%/block%}

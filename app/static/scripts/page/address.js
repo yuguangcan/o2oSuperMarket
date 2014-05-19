@@ -4,6 +4,7 @@ require(['zepto','common','widget/titlebar'], function( $ ,common ,titlebar) {
 		titlebar.init();
 		$('.submit').click(function(){
 			if($('#city').val() == -1){
+				alert('请选择地址');
 				return;
 			}
 			var data = {
@@ -18,6 +19,14 @@ require(['zepto','common','widget/titlebar'], function( $ ,common ,titlebar) {
 				community:$('#community').val(),
 				unit:$('#unit').val()
 			};
+			if(!data.receiver){
+				alert('请输入收货人');
+				return;
+			}
+			if(!data.phone){
+				alert('请输入手机号');
+				return;
+			}
 
 			$.post('/shop/addresscommit',data,function(response){
 				var data = JSON.parse(response);

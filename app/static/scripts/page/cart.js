@@ -39,7 +39,7 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 					price = price + (parent.find('.current-price').html().substr(1) - 0) * parent.find('.product-count').val();
 				}
 			});
-			totalprice.html('￥'+price);
+			totalprice.html('￥'+price.toFixed(2));
 			totalCount.html(count);
 		}
 
@@ -78,6 +78,7 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 				$('#selectall').next().html('全选');
 				$('#selectall').get(0).checked = false;
 				$('#delete').get(0).disabled = false;
+				isSelectAll = false;
 			}
 			calPriceAndCount();
 		});
@@ -104,6 +105,11 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 				alert('请输入购买数量');
 				return;
 			}
+			var max = $(this).attr('max');
+			if(value > parseInt(max)){
+				alert('该商品库存不足');
+				$(this).val(max);
+			}
 			if($(this).parents('li').find('.select').get(0).checked){
 				calPriceAndCount();
 			}
@@ -123,7 +129,7 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 				if(data && data.errno == 0){
 					window.location.href="/shop/order/neworder?id="+data.data.toid;
 				}else if(data.errno != 0){
-					alert();
+					alert('库存不足');
 				}
 			});
 		});

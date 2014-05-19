@@ -29,10 +29,11 @@ require(['zepto','common'], function( $ ,common  ) {
    				var data = JSON.parse(response);
    				isSubmmiting = false;
    				if(data){
-   					if(data.errno == 0){
+   					if(data.errcode == 0){
    						alert('抢单成功'); 
+   						$(_self).parents('.order-item').hide();
    					}
-   					if(data.errno == -1){
+   					if(data.errcode == -1){
    						alert('该订单已被抢');
    						$(_self).parents('.order-item').hide();
    					}
@@ -46,14 +47,16 @@ require(['zepto','common'], function( $ ,common  ) {
    			if(isSubmmiting){
 				return;
 			}
+			var _self = this;
 			isSubmmiting = true;
    			$.post('/shop/order/orderdone',{
    				oid:$(this).parents('.order-item').data('oid')
    			},function(response){
    				var data = JSON.parse(response);
    				isSubmmiting = false;
-   				if(data && data.errno == 0){
+   				if(data && data.errcode == 0){
    					alert('结单成功'); 
+   					$(_self).parents('.order-item').hide();
             		      					
    				}else{
    					alert('结单失败，请稍后再试');
@@ -72,10 +75,9 @@ require(['zepto','common'], function( $ ,common  ) {
 				return;
 			}
 			isLoading = true;
-			$.post('/shop/user/ordermore',{
+			$.post('/shop/order/orderfightlistmore?action='+F.context('action'),{
 				pn : pn,
-				rn : rn,
-				action : F.context('action')
+				rn : rn
 			},function(response){
 				if(response){
 					$('.orderitem-wrapper').append(response);

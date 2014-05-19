@@ -6,10 +6,6 @@
         </li>
         <li>|</li>
         <li>
-            <a href="/shop/home">帮助</a>
-        </li>
-        <li>|</li>
-        <li>
             <a href="/shop/feedbackview">反馈</a>
         </li>
     </ul>

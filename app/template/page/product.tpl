@@ -25,9 +25,11 @@
         <div class="name">{%$product.title%}</div>
         <div class="info clearfix">
             <div class="price-label-big">
-                ￥{%$product.price%}
                 {%if $product.discount%}
-                <span class="old-price">￥{%$product.discount%}</span>
+                ￥{%$product.discount%}
+                <span class="old-price">￥{%$product.price%}</span>
+                {%else%}
+                ￥{%$product.price%}
                 {%/if%}
             </div>
             <div class="stock">库存：{%$product.productNum%}</div>

@@ -83,6 +83,10 @@
 {%block name="cart"%}
 {%/block%}
 
+{%*gotop不需要*%}
+{%block name="gotop"%}
+{%/block%}
+
 {%*通用底部不需要*%}
 {%block name="footer"%}
 {%/block%}

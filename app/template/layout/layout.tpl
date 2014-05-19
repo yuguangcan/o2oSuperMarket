@@ -32,6 +32,10 @@
         {%block name="content"%}
         {%/block%}
 
+        {%block name="gotop"%}
+            {%include file="widget/gotop.tpl"%}
+        {%/block%}
+
         {%block name="footer"%}
             {%include file="widget/footer.tpl"%}
         {%/block%}

@@ -58,17 +58,17 @@
     </ul>
 
     <div class="pay">
-        <input type="radio" name="pay" class="button-checkbox" value="0"></input>
+        <input type="radio" name="pay" class="button-checkbox" value="0" checked="checked"></input>
         <label>货到付款</label>
-        <br/>
+        <!-- <br/>
         <input type="radio" name="pay" class="button-checkbox" value="1" checked="checked"></input>
-        <label>微信支付</label>
+        <label>微信支付</label> -->
     </div>
 
     <div class="deliver">
-        <input type="radio" name="deliver" class="button-checkbox" value="0"></input>
+       <!--  <input type="radio" name="deliver" class="button-checkbox" value="0"></input>
         <label>自提</label>
-        <br/>
+        <br/> -->
         <input type="radio" name="deliver" class="button-checkbox" value="1" checked="checked"></input>
         <label>送货上门</label>
     </div>
@@ -87,6 +87,10 @@
 
 {%*购物车图标不需要*%}
 {%block name="cart"%}
+{%/block%}
+
+{%*gotop不需要*%}
+{%block name="gotop"%}
 {%/block%}
 
 {%*通用底部不需要*%}
