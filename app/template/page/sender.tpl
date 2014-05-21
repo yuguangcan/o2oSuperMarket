@@ -22,7 +22,7 @@
 	<nav class="ucenter-nav">
 		{%if $action=='fight'%}
 		<a href="javascript:;" class="cur">抢单</a>
-		<a href="http://www.palmshops.cn/shop/order/orderfightlist?action=close">结单</a>
+		<a href="/shop/order/orderfightlist?action=close">结单</a>
 		{%elseif $action=='close'%}
 		<a href="/shop/order/orderfightlist">抢单</a>
 		<a href="javascript:;" class="cur">结单</a>
