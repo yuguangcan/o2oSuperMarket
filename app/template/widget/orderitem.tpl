@@ -57,7 +57,7 @@
 							<img src="{%$pitem.pic%}"></img>
 							<div class="product-name">{%$pitem.title%}</div>
 							<div class="product-count">数量：{%$pitem.order_buy_num%}</div>
-							<div class="product-price">价格：{%$pitem.order_buy_num * $pitem.order_price%}</div>
+							<div class="product-price">单价：{%$pitem.order_price%}</div>
 						</a>
 					</li>
 				{%/foreach%}
