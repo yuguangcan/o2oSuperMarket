@@ -124,6 +124,10 @@
 			width: 74px;
 			height: 74px;
 			border: 1px solid #eae8e4;
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-background-size:cover;
+            background-size: cover;
 		}
 		.info{
 			margin-left: 10px;
