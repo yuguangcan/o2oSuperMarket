@@ -117,13 +117,18 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 
 		$('.submit').click(function(){
 			var cartObj = {};
+			var hasSelect = false;
 			$('.select').each(function(index,item){
 				if(item.checked){
 					var parent = $(item).parent();
 					cartObj[parent.find('.select').val()] = parent.find('.product-count').val(); 
+					hasSelect = true;
 				}
 			});
-			
+			if(!hasSelect){
+				alert('请选择商品');
+				return;
+			}
 			$.post('/shop/cartcommit',cartObj,function(response){
 				var data = JSON.parse(response);
 				if(data && data.errno == 0){

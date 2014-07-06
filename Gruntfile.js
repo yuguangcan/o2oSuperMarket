@@ -22,83 +22,8 @@ module.exports = function (grunt) {
         config: {
             // Configurable paths
             app: 'app',
-            dist: 'dist'
-        },
-
-        // Watches files for changes and runs tasks based on the changed files
-        watch: {
-            bower: {
-                files: ['bower.json'],
-                tasks: ['bowerInstall']
-            },
-            js: {
-                files: ['<%= config.app %>/staitc/scripts/**/*.js'],
-                tasks: ['jshint'],
-                options: {
-                    livereload: true
-                }
-            },
-            jstest: {
-                files: ['test/spec/**/*.js'],
-                tasks: ['test:watch']
-            },
-            gruntfile: {
-                files: ['Gruntfile.js']
-            },
-            compass: {
-                files: ['<%= config.app %>/static/styles/**/*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
-            },
-            styles: {
-                files: ['<%= config.app %>/static/styles/**/*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
-            },
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= config.app %>/**/*.html',
-                    '.tmp/static/styles/**/*.css',
-                    '<%= config.app %>/static/images/{,*/}*'
-                ]
-            }
-        },
-
-        // The actual grunt server settings
-        connect: {
-            options: {
-                port: 9000,
-                livereload: 35729,
-                // Change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
-            },
-            livereload: {
-                options: {
-                    open: true,
-                    base: [
-                        '.tmp',
-                        '<%= config.app %>'
-                    ]
-                }
-            },
-            test: {
-                options: {
-                    port: 9001,
-                    base: [
-                        '.tmp',
-                        'test',
-                        '<%= config.app %>'
-                    ]
-                }
-            },
-            dist: {
-                options: {
-                    open: true,
-                    base: '<%= config.dist %>',
-                    livereload: false
-                }
-            }
+            dist: 'dist',
+            module: 'shop'
         },
 
         // Empties folders to start fresh
@@ -112,31 +37,6 @@ module.exports = function (grunt) {
                         '!<%= config.dist %>/.git*'
                     ]
                 }]
-            },
-            server: '.tmp'
-        },
-
-        // Make sure code styles are up to par and there are no obvious mistakes
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
-            },
-            all: [
-                'Gruntfile.js',
-                '<%= config.app %>/static/scripts/**/*.js',
-                '!<%= config.app %>/static/scripts/vendor/*',
-                'test/spec/**/*.js'
-            ]
-        },
-
-        // Mocha testing framework configuration options
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-                }
             }
         },
 
@@ -144,15 +44,15 @@ module.exports = function (grunt) {
         compass: {
             options: {
                 sassDir: '<%= config.app %>/static/styles',
-                cssDir: '.tmp/static/styles',
-                generatedImagesDir: '.tmp/static/images/generated',
+                cssDir: '.tmp/static/<%= config.module %>/styles',
+                generatedImagesDir: '.tmp/static/<%= config.module %>/images/generated',
                 imagesDir: '<%= config.app %>/static/images',
                 javascriptsDir: '<%= config.app %>/static/scripts',
                 fontsDir: '<%= config.app %>/static/styles/fonts',
-                importPath: '<%= config.app %>/bower_components',
-                httpImagesPath: '/static/images',
-                httpGeneratedImagesPath: '/static/images/generated',
-                httpFontsPath: '/static/styles/fonts',
+                httpImagesPath: '/static/<%= config.module %>/images',
+                httpGeneratedImagesPath: '/static/<%= config.module %>/images/generated',
+                httpFontsPath: '/static/<%= config.module %>/styles/fonts',
+                noLineComments: true,
                 relativeAssets: false,
                 assetCacheBuster: false
             },
@@ -161,39 +61,6 @@ module.exports = function (grunt) {
                     generatedImagesDir: '<%= config.app %>/static/images/generated'
                 }
             },
-            server: {
-                options: {
-                    debugInfo: true
-                }
-            }
-        },
-
-        // Add vendor prefixed styles
-        autoprefixer: {
-            options: {
-                browsers: ['last 1 version']
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/static/styles/',
-                    src: '**/*.css',
-                    dest: '.tmp/static/styles/'
-                }]
-            }
-        },
-
-        // Automatically inject Bower components into the HTML file
-        bowerInstall: {
-            app: {
-                src: ['<%= config.app %>/index.html'],
-                ignorePath: '<%= config.app %>/',
-                exclude: ['<%= config.app %>/bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap.js']
-            },
-            sass: {
-                src: ['<%= config.app %>/static/styles/**/*.{scss,sass}'],
-                ignorePath: '<%= config.app %>/bower_components/'
-            }
         },
 
         // Renames files for browser caching purposes
@@ -201,11 +68,10 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= config.dist %>/static/scripts/**/*.js',
-                        '<%= config.dist %>/static/styles/**/*.css',
-                        '<%= config.dist %>/static/images/**/*.*',
-                        '<%= config.dist %>/static/styles/fonts/**/*.*',
-                        '<%= config.dist %>/*.{ico,png}'
+                        '<%= config.dist %>/static/<%= config.module %>/scripts/**/*.js',
+                        '<%= config.dist %>/static/<%= config.module %>/styles/**/*.css',
+                        '<%= config.dist %>/static/<%= config.module %>/images/**/*.*',
+                        '<%= config.dist %>/static/<%= config.module %>/styles/fonts/**/*.*'
                     ]
                 }
             }
@@ -222,7 +88,7 @@ module.exports = function (grunt) {
                     useStrict: true,
                     baseUrl: '<%= config.app %>/static/scripts',
                     mainConfigFile: '<%= config.app %>/require-config.js',
-                    dir: '<%= config.dist %>/static/scripts',
+                    dir: '<%= config.dist %>/static/<%= config.module %>/scripts',
                     keepBuildDir: true
                 }
             }
@@ -241,10 +107,10 @@ module.exports = function (grunt) {
         // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
             options: {
-                assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/static/images']
+                assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/static/<%= config.module %>/images']
             },
             html: ['<%= config.dist %>/template/**/*.{html,tpl}'],
-            css: ['<%= config.dist %>/static/styles/**/*.css']
+            css: ['<%= config.dist %>/static/<%= config.module %>/styles/**/*.css']
         },
 
         // The following *-min tasks produce minified files in the dist folder
@@ -254,7 +120,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= config.app %>/static/images',
                     src: '**/*.{gif,jpeg,jpg,png}',
-                    dest: '<%= config.dist %>/static/images'
+                    dest: '<%= config.dist %>/static/<%= config.module %>/images'
                 }]
             }
         },
@@ -265,7 +131,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= config.app %>/static/images',
                     src: '**/*.svg',
-                    dest: '<%= config.dist %>/static/images'
+                    dest: '<%= config.dist %>/static/<%= config.module %>/images'
                 }]
             }
         },
@@ -324,101 +190,56 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= config.app %>',
-                    dest: '<%= config.dist %>',
+                    cwd: '<%= config.app %>/static',
+                    dest: '<%= config.dist %>/static/<%= config.module %>',
                     src: [
-                        '*.{ico,png,txt}',
-                        '.htaccess',
-                        'static/images/**/*.webp',
-                        'static/images/generated/*.*',
-                        'template/**/*.{html,tpl}',
-                        'static/styles/fonts/**/*.*',
-                        '**/*.sh'
+                        'images/**/*.webp',
+                        'images/generated/*.*',
+                    ]
+                },
+                {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= config.app %>/template',
+                    dest: '<%= config.dist %>/template',
+                    src: [
+                        '**/*.{html,tpl}'
                     ]
                 }]
             },
             styles: {
                 expand: true,
                 dot: true,
-                cwd: '<%= config.app %>/static/styles',
-                dest: '.tmp/static/styles/',
+                cwd: '.tmp/static/<%= config.module %>/styles/',
+                dest: '<%= config.dist %>/static/<%= config.module %>/styles',
                 src: '**/*.css'
             }
         },
 
         // Run some tasks in parallel to speed up build process
         concurrent: {
-            server: [
-                'compass:server',
-                'copy:styles'
-            ],
-            test: [
-                'copy:styles'
-            ],
             dist: [
                 'compass',
-                'copy:styles',
                 'imagemin',
                 'svgmin'
             ]
         }
     });
 
-
-    grunt.registerTask('serve', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
-        }
-
-        grunt.task.run([
-            'clean:server',
-            'concurrent:server',
-            'autoprefixer',
-            'connect:livereload',
-            'watch'
-        ]);
-    });
-
-    grunt.registerTask('server', function (target) {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run([target ? ('serve:' + target) : 'serve']);
-    });
-
-    grunt.registerTask('test', function (target) {
-        if (target !== 'watch') {
-            grunt.task.run([
-                'clean:server',
-                'concurrent:test',
-                'autoprefixer'
-            ]);
-        }
-
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
-    });
-
     grunt.registerTask('build', [
         'clean:dist',
-        //'jshint',
         'useminPrepare',
         'concurrent:dist',
+        'copy:styles',
         'concat',
         'cssmin',
         'requirejs:dist',
-        'uglify',
         'copy:dist',
         'rev',
         'usemin',    
         'htmlmin'
         ]);
 
-    // grunt.registerTask('default', [
-    //     'newer:jshint',
-    //     'test',
-    //     'build'
-    // ]);
 
     grunt.registerTask('default', [
         'build'
