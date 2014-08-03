@@ -7,7 +7,7 @@
 {%/block%}
 
 {%block name="css"%}
-<!-- build:css(.tmp) /static/styles/page/feedback.css -->
+<!-- build:css(.tmp) /static/shop/styles/page/feedback.css -->
 <link rel="stylesheet" href="static/styles/page/feedback.css">
 <!-- endbuild -->
 {%/block%}
@@ -31,5 +31,5 @@
 
 
 {%block name="js"%}
-<script data-main="/static/scripts/page/feedback" src="/static/scripts/require.js"></script>
+<script data-main="/static/shop/scripts/page/feedback" src="/static/shop/scripts/require.js"></script>
 {%/block%}

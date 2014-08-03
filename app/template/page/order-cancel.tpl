@@ -7,7 +7,7 @@
 {%/block%}
 
 {%block name="css"%}
-<!-- build:css(.tmp) /static/styles/page/order-cancel.css -->
+<!-- build:css(.tmp) /static/shop/styles/page/order-cancel.css -->
 <link rel="stylesheet" href="static/styles/page/order-cancel.css">
 <!-- endbuild -->
 {%/block%}
@@ -38,5 +38,5 @@
 
 
 {%block name="js"%}
-<script data-main="/static/scripts/page/order-cancel" src="/static/scripts/require.js"></script>
+<script data-main="/static/shop/scripts/page/order-cancel" src="/static/shop/scripts/require.js"></script>
 {%/block%}

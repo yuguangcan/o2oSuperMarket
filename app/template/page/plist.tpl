@@ -7,7 +7,7 @@
 {%/block%}
 
 {%block name="css"%}
-<!-- build:css(.tmp) /static/styles/page/plist.css -->
+<!-- build:css(.tmp) /static/shop/styles/page/plist.css -->
 <link rel="stylesheet" href="static/styles/page/plist.css">
 <!-- endbuild -->
 {%/block%}
@@ -103,5 +103,5 @@
 {%/block%}
 
 {%block name="js"%}
-<script data-main="/static/scripts/page/plist" src="/static/scripts/require.js"></script>
+<script data-main="/static/shop/scripts/page/plist" src="/static/shop/scripts/require.js"></script>
 {%/block%}

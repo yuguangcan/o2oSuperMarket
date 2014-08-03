@@ -11,7 +11,7 @@
             {%block name="title"%}掌心超市{%/block%}
         </title>
 
-        <!-- build:css(.tmp) /static/styles/base/common.css -->
+        <!-- build:css(.tmp) /static/shop/styles/base/common.css -->
         <link rel="stylesheet" href="static/styles/base/common.css">
         <!-- endbuild -->
 
@@ -19,7 +19,7 @@
         {%block name="css"%}
         {%/block%}
 
-        <!-- build:js({app,.tmp}) /static/scripts/base/context.js -->
+        <!-- build:js({app,.tmp}) /static/shop/scripts/base/context.js -->
         <script src="static/scripts/base/context.js"></script>
         <!-- endbuild -->
 

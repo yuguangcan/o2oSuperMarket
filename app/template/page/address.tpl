@@ -7,7 +7,7 @@
 {%/block%}
 
 {%block name="css"%}
-<!-- build:css(.tmp) /static/styles/page/address.css -->
+<!-- build:css(.tmp) /static/shop/styles/page/address.css -->
 <link rel="stylesheet" href="static/styles/page/address.css">
 <!-- endbuild -->
 {%/block%}
@@ -127,5 +127,5 @@
 
 
 {%block name="js"%}
-<script data-main="/static/scripts/page/address" src="/static/scripts/require.js"></script>
+<script data-main="/static/shop/scripts/page/address" src="/static/shop/scripts/require.js"></script>
 {%/block%}

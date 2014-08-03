@@ -7,7 +7,7 @@
 {%/block%}
 
 {%block name="css"%}
-<!-- build:css(.tmp) /static/styles/page/order-done.css -->
+<!-- build:css(.tmp) /static/shop/styles/page/order-done.css -->
 <link rel="stylesheet" href="static/styles/page/order-done.css">
 <!-- endbuild -->
 {%/block%}
@@ -37,5 +37,5 @@
 
 
 {%block name="js"%}
-<script data-main="/static/scripts/page/order-done" src="/static/scripts/require.js"></script>
+<script data-main="/static/shop/scripts/page/order-done" src="/static/shop/scripts/require.js"></script>
 {%/block%}

@@ -7,7 +7,7 @@
 {%/block%}
 
 {%block name="css"%}
-<!-- build:css(.tmp) /static/styles/page/cart.css -->
+<!-- build:css(.tmp) /static/shop/styles/page/cart.css -->
 <link rel="stylesheet" href="static/styles/page/cart.css">
 <!-- endbuild -->
 {%/block%}
@@ -92,5 +92,5 @@
 {%/block%}
 
 {%block name="js"%}
-<script data-main="/static/scripts/page/cart" src="/static/scripts/require.js"></script>
+<script data-main="/static/shop/scripts/page/cart" src="/static/shop/scripts/require.js"></script>
 {%/block%}
