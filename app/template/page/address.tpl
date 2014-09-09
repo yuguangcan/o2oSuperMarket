@@ -1,6 +1,6 @@
 {%*添加地址*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 添加收货地址
@@ -17,7 +17,7 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="widget/titlebar.tpl" title="添加收货地址"%}
+    {%include file="shop/widget/titlebar.tpl" title="添加收货地址"%}
 
     	<div class="address-input">
     		<label>收货人</label>

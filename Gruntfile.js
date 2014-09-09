@@ -201,7 +201,7 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: '<%= config.app %>/template',
-                    dest: '<%= config.dist %>/template',
+                    dest: '<%= config.dist %>/template/<%= config.module %>',
                     src: [
                         '**/*.{html,tpl}'
                     ]
@@ -236,8 +236,7 @@ module.exports = function (grunt) {
         'requirejs:dist',
         'copy:dist',
         'rev',
-        'usemin',    
-        'htmlmin'
+        'usemin'
         ]);
 
 

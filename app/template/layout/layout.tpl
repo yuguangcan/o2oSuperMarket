@@ -26,18 +26,18 @@
     </head>
     <body>
         {%block name="header"%}
-            {%include file="widget/header.tpl"%}
+            {%include file="shop/widget/header.tpl"%}
         {%/block%}
 
         {%block name="content"%}
         {%/block%}
 
         {%block name="gotop"%}
-            {%include file="widget/gotop.tpl"%}
+            {%include file="shop/widget/gotop.tpl"%}
         {%/block%}
 
         {%block name="footer"%}
-            {%include file="widget/footer.tpl"%}
+            {%include file="shop/widget/footer.tpl"%}
         {%/block%}
 
         {%*购物车图标*%}

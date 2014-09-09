@@ -1,6 +1,6 @@
 {%*购物车*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 购物车
@@ -17,7 +17,7 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="widget/titlebar.tpl" title="购物车"%}
+    {%include file="shop/widget/titlebar.tpl" title="购物车"%}
 
     {%if $cart|count > 0%}
     <div class="content-wrapper">

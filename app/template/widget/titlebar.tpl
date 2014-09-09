@@ -10,6 +10,6 @@
 	</div>
 	{%if $hideusericon == true%}
 	{%else%}
-		{%include file="widget/usericon.tpl"%}
+		{%include file="shop/widget/usericon.tpl"%}
 	{%/if%}
 </header>

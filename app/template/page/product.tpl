@@ -1,6 +1,6 @@
 {%*商品详情页*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 商品详情
@@ -18,7 +18,7 @@
 
 
 {%block name="content"%}
-    {%include file="widget/titlebar.tpl" title="商品详情"%}
+    {%include file="shop/widget/titlebar.tpl" title="商品详情"%}
 
     <div class="product"> 
         <img src="{%$product.pics.pic%}"></img>

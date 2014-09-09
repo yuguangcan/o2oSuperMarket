@@ -9,5 +9,5 @@
 			<input class="search-input" type="text" placeholder="搜索"></input>
 		</form>
 	</div>
-	{%include file="widget/usericon.tpl"%}
+	{%include file="shop/widget/usericon.tpl"%}
 </header>

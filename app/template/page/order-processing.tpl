@@ -1,6 +1,6 @@
 {%*正在处理的订单*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 我的订单
@@ -13,11 +13,11 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="widget/ucenternav.tpl" defaultindex=1%}
+    {%include file="shop/widget/ucenternav.tpl" defaultindex=1%}
 
     <div class="orderitem-wrapper">
     {%foreach $list as $item%}
-        {%include file="widget/orderitem.tpl" item=$item%}
+        {%include file="shop/widget/orderitem.tpl" item=$item%}
     {%/foreach%}
     </div>
 

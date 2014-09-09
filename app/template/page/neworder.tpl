@@ -1,6 +1,6 @@
 {%*下订单*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 下订单
@@ -17,7 +17,7 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="widget/titlebar.tpl" title="确认订单"%}
+    {%include file="shop/widget/titlebar.tpl" title="确认订单"%}
 
     <a href="/shop/addresslist?fr=order" class="address">
         收货人：

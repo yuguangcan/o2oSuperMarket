@@ -1,6 +1,6 @@
 {%*送货员操作页*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 订单操作
@@ -31,7 +31,7 @@
     {%if $list|count > 0%}
     <div class="orderitem-wrapper">
     {%foreach $list as $item%}
-        {%include file="widget/senderitem.tpl" item=$item action=$action%}
+        {%include file="shop/widget/senderitem.tpl" item=$item action=$action%}
     {%/foreach%}
     </div>
     {%else%}

@@ -1,3 +1,3 @@
 {%foreach $list as $item%}
-    {%include file="widget/senderitem.tpl" item=$item%}
+    {%include file="shop/widget/senderitem.tpl" item=$item%}
 {%/foreach%}

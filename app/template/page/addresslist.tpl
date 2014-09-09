@@ -1,6 +1,6 @@
 {%*选择地址*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 选择地址
@@ -17,7 +17,7 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="widget/titlebar.tpl" title="收货地址" hideusericon=true%}
+    {%include file="shop/widget/titlebar.tpl" title="收货地址" hideusericon=true%}
     <ul class="address-list">
         {%foreach $address as $item%}
             <li data-aid="{%$item.addressid%}">

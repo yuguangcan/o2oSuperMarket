@@ -1,6 +1,6 @@
 {%*商品列表页*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 商品列表
@@ -75,7 +75,7 @@
     {%if $productlist|count > 0%}
     	<ul class="product-list">
     		{%foreach $productlist as $item%}
-                {%include file="widget/plistitem.tpl" item=$item%}
+                {%include file="shop/widget/plistitem.tpl" item=$item%}
     		{%/foreach%}
     	</ul>
         {%if $total > 10%}

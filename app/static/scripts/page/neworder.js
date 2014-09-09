@@ -27,7 +27,7 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 					cart.clear();
 					window.location.href="/shop/user/myorder?act=0";
 				}else{
-					alert('库存不足');
+					alert(data.errmsg || '库存不足');
 				}
 			});
 		});

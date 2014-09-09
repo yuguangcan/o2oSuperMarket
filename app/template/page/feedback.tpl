@@ -1,6 +1,6 @@
 {%*反馈页*%}
 
-{%extends file="layout/layout.tpl"%} 
+{%extends file="shop/layout/layout.tpl"%} 
 
 {%block name="title"%}
 反馈
