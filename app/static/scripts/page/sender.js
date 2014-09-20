@@ -29,11 +29,11 @@ require(['zepto','common'], function( $ ,common  ) {
    				var data = JSON.parse(response);
    				isSubmmiting = false;
    				if(data){
-   					if(data.errcode == 0){
+   					if(data.errno == 0){
    						alert('抢单成功'); 
    						$(_self).parents('.order-item').hide();
    					}
-   					if(data.errcode == -1){
+   					if(data.errno == -1){
    						alert('该订单已被抢');
    						$(_self).parents('.order-item').hide();
    					}
@@ -54,7 +54,7 @@ require(['zepto','common'], function( $ ,common  ) {
    			},function(response){
    				var data = JSON.parse(response);
    				isSubmmiting = false;
-   				if(data && data.errcode == 0){
+   				if(data && data.errno == 0){
    					alert('结单成功'); 
    					$(_self).parents('.order-item').hide();
             		      					

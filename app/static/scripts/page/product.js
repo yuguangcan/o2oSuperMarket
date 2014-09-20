@@ -4,12 +4,12 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 		
 		var fr_url = window.localStorage.getItem('productFrUrl'),
 			refer = document.referrer;
-		if( refer.indexOf('shop/cart')==-1){
+		if( refer.indexOf('shop/cart')==-1 && refer.indexOf('shop/product/detail')== -1){
 			window.localStorage.setItem('productFrUrl',refer);
 			fr_url = refer;
 		}
 		titlebar.init(function(){
-			if(refer.indexOf('shop/cart')!=-1){
+			if(refer.indexOf('shop/cart')!=-1 || refer.indexOf('shop/product/detail')!=-1){
 				window.history.go(-1);
 			}else{
 				if(!fr_url){
