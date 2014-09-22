@@ -2,12 +2,12 @@
     height: 38px;
     padding-left:17px;
     background: #61cba0;
-    white-space:nowrap;
-    overflow-y:hidden;
+    overflow:hidden;
     overflow-x:scroll;
     -webkit-overflow-scrolling : touch;
     ul{
         position: relative;
+        white-space:nowrap;
     }
     li{
         display: inline-block;
@@ -16,6 +16,10 @@
         margin-right: 5px;
         text-align: center;
         position: relative;
+        height: 38px;
+        overflow: hidden;
+        -webkit-box-sizing:border-box;
+        box-sizing: border-box;
         div{
             width: 9px;
             height: 9px;
