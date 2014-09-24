@@ -69,11 +69,11 @@ require(['zepto','common','swipe'], function( $ ,common,Swipe ) {
 			callback : function(index){
 				categorySwipe.slide(index,250);
 			},
-			defaultIndex : paramIndex
+			defaultIndex : paramIndex == -1 ? 0:paramIndex
 		});
 
 		var categorySwipe = new Swipe(document.getElementById('category-slider'), {		
-			startSlide : paramIndex,
+			startSlide : paramIndex == -1 ? 0:paramIndex,
 			callback: function(index, elem) {},
 			transitionEnd: function(index, elem) {
 				categoryNav.navToIndex(index);
