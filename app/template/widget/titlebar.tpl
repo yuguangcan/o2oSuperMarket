@@ -5,7 +5,7 @@
 		{%if $title%}
 			{%$title%}
 		{%else%}
-			掌心超市
+			社区超市
 		{%/if%}
 	</div>
 	{%if $hideusericon == true%}

@@ -51,7 +51,7 @@ define(['zepto'], function ($) {
        						window.location.reload();
        					},200);
        				}else{
-       					alert('评价失败，请稍后再试');
+       					alert(data.msg ||'评价失败，请稍后再试');
        				}
        			});
        		});
@@ -67,7 +67,7 @@ define(['zepto'], function ($) {
                   window.location.reload();
                 },200);      					
        				}else{
-       					alert('取消失败，请稍后再试');
+       					alert(data.msg || '取消失败，请稍后再试');
        				}
        			});
 

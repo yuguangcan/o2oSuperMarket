@@ -133,7 +133,7 @@ require(['zepto','common','widget/cart','widget/titlebar'], function( $ ,common 
 				var data = JSON.parse(response);
 				if(data && data.errno == 0){
 					window.location.href="/shop/order/neworder?id="+data.data.toid;
-				}else if(data.errno != 0){
+				}else{
 					alert(data.errmsg || '库存不足');
 				}
 			});

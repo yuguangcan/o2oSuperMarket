@@ -81,7 +81,7 @@ module.exports = function (grunt) {
         requirejs: {
             dist: {
                 options: {
-                    optimize: 'uglify',
+                    optimize: 'none',
                     preserveLicenseComments: false,
                     generateSourceMaps: false,
                     removeCombined: true,
@@ -229,7 +229,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
-        'concurrent:dist',
+        'compass',
         'copy:styles',
         'concat',
         'cssmin',

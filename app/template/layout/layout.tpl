@@ -8,7 +8,7 @@
         <meta content="address=no" name="format-detection"/>
         <meta name="apple-mobile-web-app-capable" content="no" />
         <title>
-            {%block name="title"%}掌心超市{%/block%}
+            {%block name="title"%}社区超市{%/block%}
         </title>
 
         <!-- build:css(.tmp) /static/shop/styles/base/common.css -->

@@ -1,7 +1,7 @@
 {%*通用头部*%}
 <header class="common-header">
 	<a href="/shop/home" class="logo">
-		掌心
+		超市
 	</a>
 	<div class="search-box">
 		<span class="icon-search"></span>

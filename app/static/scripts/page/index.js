@@ -51,39 +51,35 @@ require(['zepto','common','swipe'], function( $ ,common,Swipe ) {
 
 		};
 
+		var indexNavList = $('.category ul'),
+			type = getQueryStringByName('type'),
+			paramNavItem = indexNavList.find('li[data-type="'+type+'"]'),
+			paramIndex = $.inArray(paramNavItem.get(0),indexNavList.find('li'));
+
+		function getQueryStringByName(name){
+	        var result = location.search.match(new RegExp('[\?\&]' + name+ '=([^\&]+)','i'));
+	        if(result == null || result.length < 1){
+	            return '';
+	        }
+	        return result[1];
+	    }
+
 		var categoryNav = new Nav({
 			nav : $('.category ul'),
 			callback : function(index){
 				categorySwipe.slide(index,250);
 			},
-			defaultIndex : 0
+			defaultIndex : paramIndex
 		});
 
 		var categorySwipe = new Swipe(document.getElementById('category-slider'), {		
+			startSlide : paramIndex,
 			callback: function(index, elem) {},
 			transitionEnd: function(index, elem) {
 				categoryNav.navToIndex(index);
 			}
 		});
 
-
-
-		$('#nav-category').click(function(){
-			$('.category-panel').toggle();
-		});
-		var navCategoryList = $('.navbar .category-list li'),
-			navSubCategoryList = $('.navbar .sub-category-list ul'),
-			index = 0;
-		navCategoryList.click(function(){
-			if($(this).hasClass('cur')){
-				return;
-			}
-			index = $.inArray(this,navCategoryList);
-			navCategoryList.filter('.cur').removeClass('cur');
-			$(this).addClass('cur');
-			navSubCategoryList.filter('.cur').removeClass('cur');
-			navSubCategoryList.eq(index).addClass('cur');
-		});
-		
+				
 	});
 });
