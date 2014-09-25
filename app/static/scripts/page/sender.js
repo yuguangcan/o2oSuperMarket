@@ -54,13 +54,14 @@ require(['zepto','common'], function( $ ,common  ) {
    			},function(response){
    				var data = JSON.parse(response);
    				isSubmmiting = false;
-   				if(data && data.errno == 0){
-   					alert('结单成功'); 
-   					$(_self).parents('.order-item').hide();
-            		      					
-   				}else{
-   					alert('结单失败，请稍后再试');
-   				}
+                if(data){
+                    if(data.errno == 0){
+                        alert('结单成功'); 
+                        $(_self).parents('.order-item').hide();
+                    }
+                }else{
+                    alert('结单失败，请稍后再试');
+                }
    			});
 
    		});
