@@ -24,6 +24,7 @@
             {%/foreach%}
         </ul>
     </div>
+    <a id="activity" class="activity" href="###"></a>
     <div id='category-slider' class='swipe'>
         <div class="category-list swipe-wrap">
             {%foreach $category as $itemarr%}

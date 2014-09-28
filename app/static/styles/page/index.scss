@@ -41,6 +41,16 @@
         }
     }
 }
+.activity{
+    display: none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 15px 15px 0;
+    padding-bottom: 44.8%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
 .category-list{
     ul{
         padding: 15px 15px;

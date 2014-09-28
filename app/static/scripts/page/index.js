@@ -1,5 +1,14 @@
 require(['zepto','common','swipe'], function( $ ,common,Swipe ) {
 	$(function(){
+		$.get('/shop/ajax/getactivity',function(res){
+			var data = JSON.parse(res);
+			if(data && data.errno == 0){
+				$('#activity').css({
+					'display' : 'block',
+					'background-image': 'url('+data.data[0].img + ')'
+				}).attr('href',data.data[0].url).show();
+			}
+		});
 
 		function Nav(option){
 			this.nav = $(option.nav);
