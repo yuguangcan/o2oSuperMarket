@@ -52,7 +52,8 @@ require(['zepto','common','widget/titlebar'], function( $ ,common ,titlebar) {
 		var city = $('#city'),
 			district = $('#district'),
 			community = $('#community'),
-			unit = $('#unit');
+			unit = $('#unit'),
+			addressDetailPrefix = $('.address-detail-prefix');
 		city.on('change',function(){
 			if($(this).val() == -1){
 				district.empty();
@@ -60,6 +61,7 @@ require(['zepto','common','widget/titlebar'], function( $ ,common ,titlebar) {
 				unit.empty();
 				return;
 			}
+			resetAddressDetailPrefix();
 			$.get('/shop/community?city='+$(this).val(),function(response){
 				var data = JSON.parse(response);
 				if(data && data.data){
@@ -72,6 +74,7 @@ require(['zepto','common','widget/titlebar'], function( $ ,common ,titlebar) {
 			});
 		});
 		district.on('change',function(){
+			resetAddressDetailPrefix();
 			$.get('/shop/community?district='+$(this).val(),function(response){
 				var data = JSON.parse(response);
 				if(data && data.data){
@@ -85,6 +88,7 @@ require(['zepto','common','widget/titlebar'], function( $ ,common ,titlebar) {
 			});
 		});
 		community.on('change',function(){
+			resetAddressDetailPrefix();
 			$.get('/shop/community?community='+$(this).val(),function(response){
 				var data = JSON.parse(response);
 				if(data && data.data){
@@ -92,10 +96,16 @@ require(['zepto','common','widget/titlebar'], function( $ ,common ,titlebar) {
 					for(var i =0;i<data.data.length;i++){
 						unit.append("<option value='"+data.data[i].unit+"'>"+data.data[i].unit+"</option>");
 					}
+					unit.change();
 				}
 			});
 		});
-
+		unit.on('change',function(){
+			resetAddressDetailPrefix();
+		});
+		function resetAddressDetailPrefix(){
+			addressDetailPrefix.html(city.val()+district.val()+community.val()+unit.val());
+		}
 
 	});
 

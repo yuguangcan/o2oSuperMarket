@@ -5,6 +5,7 @@
 	color: #666;
 	font-size: 16px;
 	display: -webkit-box;
+	-webkit-box-pack: center;
 	label{
 		width: 70px;
 		text-align: justify;
@@ -56,23 +57,35 @@
 	height: 80px;
 	line-height: 80px;
 	color: #666;
+	display: -webkit-box;
+	-webkit-box-pack: center;
 	label{
 		width: 70px;
 		text-align: justify;
 		display: inline-block;
 	}
-	textarea{
+	.address-detail-textarea{
+		background: #fff;
 		width: 220px;
 		font-size: 16px;
 		height: 78px;
 		border:1px solid #61cba0;
 		-webkit-border-radius:3px;
 		border-radius: 3px;
-		vertical-align: middle;
-		outline: none;
 		padding: 3px 5px;
 		-webkit-box-sizing:border-box;
 		box-sizing:border-box;
+		line-height: 22px;
+		overflow: auto;
+	}
+	textarea{
+		vertical-align: middle;
+		outline: none;
+		resize:none;
+		font-size: 16px;
+		color: #666;
+		display: block;
+		width: 100%;
 	}
 }
 .address-set-default{

@@ -20,12 +20,10 @@
     {%include file="shop/widget/titlebar.tpl" title="添加收货地址"%}
 
     	<div class="address-input">
-    		<label>收货人</label>
-    		<input name="receiver" id="receiver" type="text" value="{%$address.receiver%}"></input>
+    		<label>收货人</label><input name="receiver" id="receiver" type="text" value="{%$address.receiver%}"></input>
     	</div>
     	<div class="address-input">
-    		<label>手机号</label>
-    		<input name="phone" id="phone" type="telephone" value="{%$address.phone%}"></input>
+    		<label>手机号</label><input name="phone" id="phone" type="telephone" value="{%$address.phone%}"></input>
     	</div>
     	<div class="address-input">
     		<label>城市</label>
@@ -98,7 +96,10 @@
         </div>
     	<div class="address-detail">
     		<label>详细地址</label>
-    		<textarea name="name" id="detail">{%$address.detail%}</textarea>
+            <div class="address-detail-textarea">
+                <div class="address-detail-prefix"></div>
+                <textarea name="name" id="detail">{%$address.detail%}</textarea>
+            </div>
     	</div>
         <div class="address-set-default">
             {%if $address.prio == '1'%}
