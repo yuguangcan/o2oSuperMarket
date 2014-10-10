@@ -64,6 +64,27 @@ require(['zepto','common'], function( $ ,common  ) {
                 }
    			});
 
+   		}).on('click','.return-submit',function(){
+   			if(isSubmmiting){
+				return;
+			}
+			var _self = this;
+			isSubmmiting = true;
+   			$.post('/shop/order/orderquit',{
+   				oid:$(this).parents('.order-item').data('oid')
+   			},function(response){
+   				var data = JSON.parse(response);
+   				isSubmmiting = false;
+                if(data){
+                    if(data.errno == 0){
+                        alert('退货成功'); 
+                        $(_self).parents('.order-item').hide();
+                    }
+                }else{
+                    alert('退货失败，请稍后再试');
+                }
+   			});
+
    		});
 
 
