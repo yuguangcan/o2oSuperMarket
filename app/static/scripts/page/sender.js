@@ -65,7 +65,7 @@ require(['zepto','common'], function( $ ,common  ) {
    			});
 
    		}).on('click','.return-submit',function(){
-   			if(isSubmmiting){
+   			if(isSubmmiting || !confirm("确认退货？")){
 				return;
 			}
 			var _self = this;
