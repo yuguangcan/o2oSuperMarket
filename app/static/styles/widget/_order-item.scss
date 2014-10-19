@@ -38,7 +38,6 @@
 			display: inline-block;
 			li{
 				display: inline-block;
-				margin-right: 9px;
 				height: 18px;
 				width: 18px;
 				position: relative;
@@ -47,6 +46,8 @@
 		}
 		.rank-submit{
 			float: right;
+			position: relative;
+			top: 2px;
 		}
 	}
 	.info{
