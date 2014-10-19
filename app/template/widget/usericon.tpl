@@ -5,8 +5,8 @@
 	</div>
 	<div id="uermenu" class="user-menu">
 		<ul>
-			<li><a href="javascript:;">{%$user.uname%}</a></li>
-			<li><a href="javascript:;">积分：{%$user.score%}</a></li>
+			<li><a href="/community/ucenter/ucenter">{%$user.uname%}</a></li>
+			<li><a href="/community/ucenter/ucenter">积分：{%$user.score%}</a></li>
 			<li><a href="/shop/user/myorder?act=0">我的订单<span></span></a></li>
 			<li><a href="/shop/addresslist?fr=user">我的地址<span></span></a></li>
 		</ul>
